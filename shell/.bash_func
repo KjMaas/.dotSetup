@@ -1,0 +1,13 @@
+
+
+# create symlink to windows home folder (if it doesn't already exist)
+WINHOME=/mnt/c/Users/Klaaz/
+if [ ! -L ~/winhome ]; then
+	if [ -d $WINHOME ]; then
+		ln -s $WINHOME ~/winhome
+		echo "=> windows home ($WINHOME) symlinked to '~/winhome'"
+	else
+		echo "=> could not symlink Windows home directory ('$WINHOME' doesn't exist)"
+	fi
+fi
+

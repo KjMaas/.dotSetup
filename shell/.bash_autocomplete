@@ -1,0 +1,93 @@
+
+# -------------- UTT autocomplete -----------
+
+# Run something, muting output or redirecting it to the debug stream
+# depending on the value of _ARC_DEBUG.
+__python_argcomplete_run() {
+    if [[ -z "$_ARC_DEBUG" ]]; then
+        "$@" 8>&1 9>&2 1>/dev/null 2>&1
+    else
+        "$@" 8>&1 9>&2 1>&9 2>&1
+    fi
+}
+
+_python_argcomplete() {
+    local IFS=$'\013'
+    local SUPPRESS_SPACE=0
+    if compopt +o nospace 2> /dev/null; then
+        SUPPRESS_SPACE=1
+    fi
+    COMPREPLY=( $(IFS="$IFS" \
+                  COMP_LINE="$COMP_LINE" \
+                  COMP_POINT="$COMP_POINT" \
+                  COMP_TYPE="$COMP_TYPE" \
+                  _ARGCOMPLETE_COMP_WORDBREAKS="$COMP_WORDBREAKS" \
+                  _ARGCOMPLETE=1 \
+                  _ARGCOMPLETE_SUPPRESS_SPACE=$SUPPRESS_SPACE \
+                  __python_argcomplete_run "$1") )
+    if [[ $? != 0 ]]; then
+        unset COMPREPLY
+    elif [[ $SUPPRESS_SPACE == 1 ]] && [[ "$COMPREPLY" =~ [=/:]$ ]]; then
+        compopt -o nospace
+    fi
+}
+
+complete -o nospace -o default -o bashdefault -F _python_argcomplete utt
+
+
+
+# -------------- NeoVim-remote autocomplete -----------
+
+#/usr/bin/env bash
+# bash command completion for neovim remote.
+# Source that file in your bashrc to use it.
+
+_nvr_opts_completions()
+{
+    local cur prev opts
+    cur=${COMP_WORDS[COMP_CWORD]}
+    prev=${COMP_WORDS[COMP_CWORD-1]}
+    opts=(
+        -h
+        -cc
+        -c
+        -d
+        -l
+        -o
+        -O
+        -p
+        -q
+        -s
+        -t
+        --nostart
+        --version
+        --serverlist
+        --servername
+        --remote
+        --remote-wait
+        --remote-silent
+        --remote-wait-silent
+        --remote-tab
+        --remote-tab-wait
+        --remote-tab-silent
+        --remote-tab-wait-silent
+        --remote-send
+        --remote-expr
+    )
+    case "${prev}" in
+        --servername)
+            srvlist=$(nvr --serverlist)
+            COMPREPLY=( $(compgen -W "${srvlist}" -- "$cur") )
+            return 0
+            ;;
+    esac
+    if [[ "$cur" =~ ^- ]]; then
+        COMPREPLY=( $(compgen -W "${opts[*]}" -- "$cur") )
+        return 0
+    fi
+
+    COMPREPLY=()
+    return 0
+}
+
+complete -o default -F _nvr_opts_completions nvr
