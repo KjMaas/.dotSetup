@@ -1,457 +1,3 @@
-which python3
-which python3.6
-which python3.65
-nvim
-do-release-upgrade -c
-nvim
-$BROWSER
-BROWSER
-echo $BROWSER
-$BROWSER
-echo $BROWSER
-$BROWSER
-echo $BROWSER
-echo "$BROWSER"
-"$BROWSER"
-$BROWSER
-echo $PATH
-echo $PATH | grep ana
-anaconda3
-$anaconda3
-echo $PATH | grep python
-whereis python
-whereis python | grep anaconda
-which python
-$python
-echo $python
-pyhton
-python
-whisch python
-which python
-l /usr/bin | grep python
-rm /usr/bin/python
-l /usr/bin | grep python
-whereis python | grep anaconda
-ln -s /usr/bin/python /mnt/c/Users/Klaaz/anaconda3/python.exe 
-ln -s /mnt/c/Users/Klaaz/anaconda3/python.exe /usr/bin/python
-l /usr/bin | grep python
-which python
-python --version
-python
-python.exe-version
-python.exe --version
-python.exe
-alias python=python.exe
-python
-conda
-conda activate
-python conda activate
-python conda
-l /usr/bin | grep python
-source .bashrc
-l /usr/bin | grep python
-rm /usr/bin/python
-l /usr/bin | grep python
-python
-python --version
-echo "hi""python --version"
-echo "hi""${python --version}"
-echo "hi"${python} --version
-echo "hi"$python --version
-echo hi$python --version
-echo hi${python} --version
-echo hi ${python} --version
-echo "hi ${python} --version"
-echo "hi $python --version"
-echo $python
-echo $python --version
-echo ${python --version}
-echo ${python} --version
-echo $(python --version)
-source .bashrc
-rm /usr/bin/python
-rm /usr/bin/python.exe 
-l /usr/bin | grep python
-source .bashrc
-rm /usr/bin/python.exe 
-l /usr/bin | grep python
-source .bashrc
-l /usr/bin | grep python
-rm /usr/bin/python.exe 
-l /usr/bin | grep python
-source .bashrc
-man echo
-man ^
-help ^
-man man
-man -k ^
-l /usr/bin | grep python
-rm /usr/bin/python.exe 
-source .bashrc
-rm /usr/bin/python.exe 
-source .bashrc
-rm /usr/bin/python.exe 
-source .bashrc
-rm /usr/bin/python.exe 
-source .bashrc
-l /usr/bin | grep python
-conda
-wsl --set-default-version 2
-cmd
-cmd.exe
-cd ~
-l
-l /usr/bin/ | grep python
-/mnt/c/Users/Klaaz/anaconda3/Scripts/conda.exe 
-/mnt/c/Users/Klaaz/anaconda3/Scripts/conda.exe --version
-/mnt/c/Users/Klaaz/anaconda3/Scripts/conda.exe list
-/mnt/c/Users/Klaaz/anaconda3/Scripts/conda.exe list | grep jupytter
-/mnt/c/Users/Klaaz/anaconda3/Scripts/conda.exe list | grep jupyter
-/mnt/c/Users/Klaaz/anaconda3/Scripts/conda.exe init
-/mnt/c/Users/Klaaz/anaconda3/Scripts/conda.exe activate
-/mnt/c/Users/Klaaz/anaconda3/Scripts/conda.exe init bash
-i
-l
-nvim /mnt/c/Users/Klaaz/.bash_profile 
-conda
-l /mnt/c/Users/Klaaz/.bash_profile 
-l /mnt/c/Users/Klaaz/
-nvim /mnt/c/Users/Klaaz/.conda
-l /mnt/c/Users/Klaaz/
-l /mnt/c/Users/Klaaz/anaconda3/Scripts/
-nvim /mnt/c/Users/Klaaz/anaconda3/condabin/conda.bat 
-nvim :e /mnt/c/Users/Klaaz/anaconda3/condabin/conda.bat 
-/mnt/c/Users/Klaaz/anaconda3/Scripts/conda.exe init bash
-h ~/bash_aliases
-source .bashrc
-h ~/bash_aliases
-rm /usr/bin/python.exe 
-source .bashrc
-conda
-conda init
-conda list | grep pip
-conda update
-conda activate
-git
-apt-get update
-apt-get upgrade
-do-release-upgrade -c
-firefox
-firefox.exe 
-nvim .bashrc
-source .bashrc
-rm /usr/bin/python.exe 
-l /usr/bin/ | grep python
-source .bashrc
-l /usr/bin/ | grep python
-python
-python.exe
-whereis python.exe
-$python.exe
-${python.exe}
-$(python.exe)
-rm /usr/bin/python.exe 
-l /usr/bin/ | grep python
-source .bashrc
-l /usr/bin/ | grep python
-source .bashrc
-rm /usr/bin/python
-source .bashrc
-python
-$WSL_PYTHON
-echo WSL_PYTHON
-echo $WSL_PYTHON
-rm /usr/bin/python
-l /usr/bin/ | grep python
-source .bashrc
-l /usr/bin/ | grep python
-source .bashrc
-python
-conda
-source .bashrc
-conda
-python
-nvim .bashrc
-python.exe --version
-python.exe -version
-python.exe
-l
-l /usr/bin/ | grep python
-python
-python.exe
-whereis python
-whereis python | grep ana
-rm /usr/bin/python.exe 
-python
-source .bashrc
-python
-python.exe
-$python
-echo $python
-l /usr/bin/ | grep python
-conda
-python
-python.exe
-conda activate
-CALL
-conda.bat activate
-conda init --help
-conda init --reverse
-conda init bash --verbose
-conda bash
-conda activate bash
-/mnt/c/Users/Klaaz/anaconda3/condabin/conda.bat activate
-/mnt/c/Users/Klaaz/anaconda3/condabin/conda.bat
-nvim .bashrc
-nvim _conda.exe 
-echo $PATH
-echo $PATH | grep anaconda
-cmd
-bash
-bash
-source .bashrc
-conda init
-conda activate
-conda init bash
-jupyter
-whereis cond
-whereis conda
-whereis conda.sh
-man hook
-echo $hook
-echo $ls
-echo $(ls)
-echo $(l)
-ls
-l /mnt/c/Users/Klaaz/anaconda3/etc/
-l /mnt/c/Users/Klaaz/anaconda3/etc/profile.d/
-nvim /mnt/c/Users/Klaaz/anaconda3/etc/profile.d/conda.sh 
-nvim
-nvim /mnt/c/Users/Klaaz/anaconda3/etc/profile.d/conda.csh 
-conda --version
-conda activate
-pwd
-cd ~/
-l
-wget Miniconda3-latest-Linux-x86_64.sh
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-l
-bash Miniconda3-latest-Linux-x86_64.sh 
-conda
-source .bashrc
-conda
-whereis conda
-echo $PATH
-echo $PATH | grep anaconda
-conda
-python
-python.exe
-ipython
-ipython.exe
-nvim .bashrc
-conda
-l
-l /
-~/miniconda3/bin/conda activate
-~/miniconda3/bin/conda init bash
-~/miniconda3/bin/conda init bash ~/.bashrc
-l /rrot/
-l /root/
-l /root/miniconda3/
-echo "$(/root/miniconda3/bin/conda shell.bash hook)"
-eval "$(/root/miniconda3/bin/conda shell.bash hook)"
-conda
-conda init
-whereis conda
-conda init --reset
-conda list
-conda deactivate
-conda
-conda init
-conda activate
-conda init
-conda init bash
-conda
-cd ~/
-l
-nvim conda_tmp 
-l
-jcat .profile 
-cat .profile 
-l
-l USR_TMP/
-l miniconda3/share/
-l miniconda3/share/jupyter/
-l miniconda3/share/jupyter/lab/
-jupyter notebook --generate-config
-jupyter lab
-l
-pwd
-cd ..
-pwd
-cd ..
-pwd
-l
-l home/
-l ~/
-l
-l usr/
-jupyter lab
-l /usr/
-jupyter lab
-jupyter lab --allow-root
-ifconfig 
-jupyter notebook --no-browser  --port 8888
-jupyter notebook --no-browser  --port 8888 --allow-root
-jupyter lab
-jupyter lab --allow-root
-ipython
-:q
-l
-pwd
-l ..
-l ~/
-jupyter lab
-jupyter lab --allow-root
-pwd
-l
-cd Klaaz/
-l
-cd ../..
-l
-jupyter lab --allow-root
-l
-conda update
-conda install jupyter
-jupyter lab
-conda install jupyter lab
-conda install jupyterlab
-jupyter lab
-jupyter lab --allow-root
-l
-rm -rf miniconda3/
-l
-l conda_tmp 
-rm conda_tmp 
-l
-rm Miniconda3-latest-Linux-x86_64.sh 
-l
-l .conda/
-l .con
-l .config/
-l .jupyter/
-l .jupyter/lab/
-l
-cd /usr/
-l
-l miniconda3/
-l mniconda3/
-mv mniconda3/ miniconda3
-l miniconda3/
-mv miniconda3/mniconda3/ /usr/miniconda3/
-mv miniconda3/mniconda3/* /usr/miniconda3/
-l miniconda3/mniconda3/
-rm miniconda3/mniconda3/
-rm -d miniconda3/mniconda3/
-l
-l miniconda3/
-i
-l
-conda deactivate
-conda
-source ~/.bashrc
-conda deactivate
-source ~/.bashrc
-conda
-nvim .bashrc
-conda
-source .bashrc
-conda
-l /usr/miniconda3/bin/
-l /usr/miniconda3/bin/ | grep conda
-cat .bashrc
-conda
-find mniconda
-find / mniconda
-find / | mniconda
-find . | mniconda
-find /usr/ | mniconda
-conda
-l /usr/
-find .bashrc
-find / | .bashrc
-l ~/.config/
-l ~/.config/nvim/
-l /usr/local/
-whereis .bashrc
-whereis .bashrc | grep .bashrc
-find . -type f -print0 | xargs -0 grep "mniconda"
-rm ~/.local/share/nvim/undo/%root%.bashrc 
-find . -type f -print0 | xargs -0 grep "mniconda"
-nvim ~/.conda/environments.txt 
-find . -type f -print0 | xargs -0 grep "mniconda"
-nvim ~/.conda/environments.txt 
-rm ~/.local/share/nvim/undo/%root%.conda%environments.txt 
-find . -type f -print0 | xargs -0 grep "mniconda"
-rm ~/.conda/environments.txt~ 
-conda
-find . -type f -print0 | xargs -0 grep "/usr/mniconda3/bin/conda"
-conda
-nvim .bashrc
-conda list
-conda install jupyterlab
-jupyter lab
-jupyter lab --allow-root
-/mnt/c/Windows/system32/cmd.exe /c "start http://localhost:8888"
-m
-l
-l /usr/
-l /usr/local/
-mkdir /usr/Jupyter_labbooks
-echo 'hi' | xclip
-echo 'hi' | clip
-echo 'hi' | clip.exe
-clip.exe
-cat clip.exe
-jupyter lab
-l /usr/Jupyter_labbooks/
-l home/usr
-l /home/usr
-l /home/user
-cd /home
-pwd
-l
-mkdir Klaaz
-l
-jupyter lab
-jupyter lab --allow-root
-l ~/
-man wget
-l /usr/
-cd /usr/
-l
-source .bashrc
-source ~/.bashrc
-l
-l miniconda3/
-l mniconda3/
-l
-mkdir Klaaz
-l
-mv -rf Jupyter_labbooks/ Klaaz/
-mv -d Jupyter_labbooks/ Klaaz/
-mv Jupyter_labbooks/ Klaaz/
-l
-l Klaaz/
-l Klaaz/Jupyter_labbooks/
-l
-rm ./*~
-rm *~
-rm *\~
-rm .bashrc~
-l
-nvim
-conda
 jupyter lab
 conda
 /usr/miniconda3/bin/conda activate
@@ -1998,3 +1544,457 @@ echo "Welcome Home!" | figlet -f slant -s -c
 echo "Welcome Home!" | figlet -f script -s -c
 echo "Welcome Home!" | figlet -f lean -s -c
 echo "Welcome Home!" | figlet -f slant -s -c
+l
+l /usr/
+l /usr/projects/
+cd /usr/projects/
+mkdir python_utils
+cd python_utils/
+mkdir py_wrappers
+cd py_wrappers/
+nvr -o wrappers.py
+pwd
+pwd
+l /mnt/
+git status
+l
+l HEAD 
+l
+l objects/
+l info/
+cat HEAD 
+l branches/
+l hooks/
+git log
+git init --bare python_utils.git
+l
+pwd
+rm -rf python_utils.git/
+l
+git init --bare python_utils.git
+git init python_utils.git
+git init --bare python_utils.git
+ipython
+n
+sshfs 
+l /mnt/
+cd /usr/projects/python_utils/py_wrappers/
+l
+nvr -O wrappers.py 
+python wrappers.py 
+l
+rm -rf .git/
+l
+cd ..
+git init
+l
+git status
+git add .
+git status
+git origin -v
+git remote -v
+git remote add /mnt/d/Google\ Drive/pyLib/python_utils.git
+git remote -v
+git remote add origin /mnt/d/Google\ Drive/pyLib/python_utils.git
+git remote -v
+l
+git status
+cat > README.md
+l
+git add .
+git status
+git commit -m "initial commit"
+git status
+git log
+git push origin master
+git push -u origin master
+git remote -v
+git push
+git pull
+git log
+git diff
+git status
+git push -u origin master
+cd ..
+l
+mkdir tmp
+cd tmp
+git clone /mnt/d/Google Drive/pyLib/python_utils.git
+git clone /mnt/d/Google\ Drive/pyLib/python_utils.git
+l
+cd python_utils/
+l
+cd ../..
+l
+cd python_utils/
+git status
+ln -s Gdrive /mnt/d/Google\ Drive/pyLib/python_utils
+l
+ll
+l
+ls
+man ln
+ln -s /mnt/d/Google\ Drive/pyLib/python_utils gdrive
+l
+cd gdrive
+l
+rm Gdrive 
+l
+cd ..
+l
+cd gdrive
+l
+git clone /mnt/d/Google\ Drive/pyLib/python_utils.git
+l
+cd ..
+l
+touch _init_.py
+git add .
+git status
+git commit -m "added _init_.py"
+git push
+cd gdrive
+git pull
+l
+cd python_utils/
+git pull
+l
+git status
+git add .
+cd ../..
+l
+mv _init_.py __init__.py
+l
+git status
+git add .
+git status
+l
+l py_wrappers/
+git commit -m "renamed _init_.py to __init__.py"
+git push
+l
+l py_wrappers/
+l
+mv __init__.py py_wrappers/__init__.py
+l
+git push
+git add .
+git commit -m "moved __init__.py"
+git push
+l
+mkdir py_imports
+cd py_imports/
+> __init__.py
+l
+nvr -o impdata.py
+l
+cd ..
+l
+cd py_tests/
+l
+mkdir -p datasets/
+l
+cd datasets/
+cp -r /mnt/c/Users/Klaaz/Desktop/Floki/cat_vs_bob_vs_gazon-20200505T145910Z-001.zip ./
+l
+unzip cat_vs_bob_vs_gazon-20200505T145910Z-001.zip 
+l
+l cat_vs_bob_vs_gazon
+l cat_vs_bob_vs_gazon/bob/
+rm cat_vs_bob_vs_gazon-20200505T145910Z-001.zip 
+l
+cd cat_vs_bob_vs_gazon/
+l
+rm -rf 2_CNN-transfer-learning_tmp/
+l
+mv bob/ class__bob
+l
+l class__bob/
+mv cat/ class__cat
+mv gazon/ class__gazon
+l
+l
+cd ..
+l
+l py_imports/
+touch py_tests/vars.py py_tests/__init__.py
+mkdir py_tests
+touch py_tests/vars.py py_tests/__init__.py
+l py_tests/
+cat > py_tests/vars.py 
+nvr py_tests/vars.py 
+l
+n test_session_neovim 
+cd /usr/projects/python_utils/
+l
+n edit_test_push_pull.nvimSession 
+edit_test_push_pull.nvimSession 
+n
+n -S edit_test_push_pull.nvimSession 
+pwd
+ipython
+l
+l ..
+> __init__.py
+l
+ipython
+l
+cd ..
+l
+> __init__.py
+l
+ipython
+l
+git status
+git add .
+git status
+git commit -m "adding new functions to python_utils"
+git statu
+git status
+git log
+git push
+git log
+python -c .py_imports/impdata.py
+python -c ./py_imports/impdata.py
+python -c py_imports/impdata.py
+python -c run ./py_imports/impdata.py
+python -m py_imports/impdata.py
+python -m ./py_imports/impdata.py
+python ./py_imports/impdata.py
+conda
+conda install opencv
+python import cv2
+python ./py_imports/impdata.py
+ipython
+l
+git status
+git add .
+git commit -m "added extra import methods to imptdata.py"
+git push
+ipython
+cd ..
+ll
+l
+git status
+git log
+cd /usr/projects/
+l
+cd python_utils/
+l
+cd gdrive
+l
+l python_utils/
+cd python_utils/
+git pull
+l
+l py_wrappers/
+l
+git pull
+l
+l py_wrappers/
+l
+git pull
+l
+git pull
+n
+l
+cd /usr/projects/python_utils/
+l
+n -S edit_test_push_pull.nvimSession 
+l
+mkdir py_preview
+> py_preview/__init__.py
+l py_preview/
+l py_imports/
+cd py_preview/
+> previmg.py
+l
+cd ..
+ipython
+l
+cd ..
+l
+l py_imports/
+l
+mkdir py_transdata
+cd py_transdata/
+> __init__.py
+> transform.py
+l
+cd ..
+mkdir py_save
+cd py_save/
+l
+> __init__.py
+> savedata.py
+l
+cd ..
+l
+cd py_preview/
+l
+> plothistory.py
+cd ..
+git status
+git add .
+git status
+git commit -m "added extra functions"
+git push
+git log
+mkdir py_keras
+cd py_keras/
+> __init__.py
+> model.py
+conda install tensorflow
+l
+find ../ mobilenet_1.00
+find ../
+find ../ | grep mobilenet_1.00_224
+find / -maxdepth 5 | grep mobilenet_1.00_224
+find / -maxdepth 5 2>/dev/null | grep mobilenet_1.00_224
+find / -maxdepth 10 2>/dev/null | grep mobilenet_1.00_224
+find / -maxdepth 10 2>/dev/null | grep mobilenet_1
+cd ..
+l
+cd py_keras/
+l
+> datagen.py
+l
+l ..
+cd gdrive
+l
+cd python_utils/
+l
+git pull
+l
+git status
+git fetch
+git status
+git pull
+git fetch
+gitstatus
+git status
+git pull
+git log
+git pull
+git log
+l
+git status
+git add .
+git status
+git commit -m "added py_preview modules"
+git push
+l
+git status
+git add .
+git status
+git commit -m "added datagen.py"
+git push
+l
+cd ..
+cd py_imports/
+l
+nvr impdata.py 
+cd ../py_transdata/
+l
+man cd | cat
+man ls | cat
+man ls | cat | grep -C 
+man ls | cat | grep \-C 
+man ls | cat | grep "-C" 
+man ls | cat | grep C 
+l
+ls -l
+ls -la
+ls -lA
+ls -lAC
+ls -AC
+ls -C
+ls 
+man ls | cat | grep F
+ls 
+ls -A
+ls -AF
+ls -AF ~/
+ls -A ~/
+ls -Al ~/
+ls -AlF ~/
+ls -AlF /usr/projects/python_utils/
+ls -AlF /usr/projects/python_utils/py_tests/
+ls -AlF /usr/projects/python_utils/py_tests/datasets/
+ls -AlF /usr/projects/python_utils/py_tests/datasets/cat_vs_bob_vs_gazon/
+ls -AlF /usr/projects/python_utils/py_tests/datasets/cat_vs_bob_vs_gazon/class__bob/
+source ~/.bashrc
+cd ~/
+mkcd tmptmp
+source ~/.bashrc
+mkcd tmptmp
+echo $(pwd)
+echo "$(pwd)"
+echo "${pwd}"
+source ~/.bashrc
+mkcd Tmp/tmp
+pwd
+tree pwd
+tree $pwd
+source ~/.bashrc
+mkcd Tmp/tmp
+source ~/.bashrc
+mkcd Tmp/tmp
+dirTmp="$pwd"
+echo $dirTmp
+echo $(dirTmp)
+echo ${dirTmp}
+dirTmp="$(pwd)"
+echo "$dirTmp"
+mkdir -p bla/bli
+cd bla/bli
+tree "$dirTmp"
+cd ../../../../../
+source ~/.bashrc
+mkcd blou/bla/bli
+cd ..
+gsettings list-recursively
+gsettings list-recursively | less
+gsettings list-recursively | grep 'keyboard'
+ls --color=auto -ACF
+l
+# Show contents of dir after action
+function cd () {     builtin cd "$1";     ls -ACF; }
+cd .
+function cd () {     builtin cd "$1";     ls -al; }
+cd .
+cd /
+# Show contents of dir after action
+function cd () {     builtin cd "$1";     ls -ACF; }
+cd
+# Show contents of dir after action
+function cd () {     builtin cd "$1";     ls -ACF; }
+function cd () {     builtin cd "$1";     ls -ahl; }
+cd
+man ls
+ls -R
+cd /usr/projects/python_utils/
+ls -R
+ls -Rl
+n ~/dotfiles_setup/shell/.bashrc 
+unzip mobilenetv2_1.00_224_json-20200526T133627Z-001.zip 
+:pw
+pwd
+n
+cd ..
+cd py_tests/
+cd datasets/
+cd cat_vs_bob_vs_gazon/
+./class__bob/ ./bob
+l
+./class__bob/ ./bob/
+l
+mv ./class__bob/ ./bob/
+l
+mv ./class__cat/ ./cat/
+
+mv ./class__gazon/ ./gazon/
+l
+:bd!
+tatus
+:bq!

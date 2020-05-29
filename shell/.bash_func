@@ -1,4 +1,16 @@
+# list directory content when using 'cd'
+function cd () {
+    builtin cd "$1";
+    ls -AlF;
+    }
 
+# cd into directory and show dir tree when created
+function mkcd () {
+    currentDir="$(pwd)"
+    mkdir -p "$1";
+    builtin cd "$1";
+    tree "$currentDir";
+    }
 
 # create symlink to windows home folder (if it doesn't already exist)
 WINHOME=/mnt/c/Users/Klaaz/

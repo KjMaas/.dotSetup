@@ -54,7 +54,7 @@
     " Python-related plugins
     Plug 'tmhedberg/SimpylFold'
 
-	"Plug 'davidhalter/jedi-vim'
+	Plug 'davidhalter/jedi-vim'
 	"Plug 'http://github.com/tpope/vim-surround'
 
     " Browsing
@@ -75,6 +75,16 @@
         map &² :NERDTreeClose<CR>
         " open Nerd Tree in folder of file in active buffer
         map <Leader>² :NERDTree %:p:h<CR>
+        " sort nb by increasing value
+        let NERDTreeNaturalSort=1
+        " make NERDTree cd follow Nvim cd
+        let NERDTreeChDirMode=3
+        " prevent certain files from showing up in NERDTree
+        let NERDTreeIgnore=['\~$', '^__pycache__$[[dir]]']
+        " quit NERDTree when opening a file
+        let NERDTreeQuitOnOpen=3
+        " show line nbs also in NERDTree
+        let NERDTreeShowLineNumbers=1
     " Gitgutter
         set updatetime=100
         nmap <Leader>ghl :GitGutterLineHighlightsToggle<CR>
@@ -91,6 +101,8 @@
           return printf('+%d ~%d -%d', a, m, r)
         endfunction
         set statusline+=%{GitStatus()}
+    " python autocompletion -> Jedi-Vim
+        let g:jedi#use_splits_not_buffers = "left"
 
 "--------------------------------------------------------------------------------
 
