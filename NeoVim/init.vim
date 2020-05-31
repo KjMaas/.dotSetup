@@ -84,7 +84,7 @@
         " quit NERDTree when opening a file
         let NERDTreeQuitOnOpen=3
         " show line nbs also in NERDTree
-        let NERDTreeShowLineNumbers=1
+        let NERDTreeShowLineNumbers=0
     " Gitgutter
         set updatetime=100
         nmap <Leader>ghl :GitGutterLineHighlightsToggle<CR>

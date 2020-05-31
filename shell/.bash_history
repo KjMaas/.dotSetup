@@ -1,50 +1,3 @@
-jupyter lab
-conda
-/usr/miniconda3/bin/conda activate
-/usr/miniconda3/bin/conda init bash
-cond
-conda
-l
-l /
-l/us
-l /usr/
-nvim
-nvim
-whereis bin/
-whereis /bin/
-whereis /bin
-whereis nvim
-BROWSER 
-$BROWSER
-firefox
-firefox.exe
-nvim .bashrc 
-conda
-l
-cd /
-l
-cd usr/
-l
-rm -rf miniconda3/
-l
-l /usr/
-l /usr/miniconda3/
-cd /
-l
-cd usr/
-l
-rm Miniconda3-latest-Linux-x86_64.sh.1 
-l
-bash Miniconda3-latest-Linux-x86_64.sh 
-l
-:q
-l
-l /usr/
-l /usr/miniconda3/
-rm /usr/miniconda3/
-man rm
-rm -d /usr/miniconda3/
-l /usr/
 l
 cd /usr/
 l
@@ -1998,3 +1951,50 @@ l
 :bd!
 tatus
 :bq!
+tatus
+:bd!
+cd /root/dotfiles_setup/
+git push origin master
+git remote -v
+git push
+git push origin master
+l /
+l /root/
+cat .git/
+cat ../.gitconfig 
+git log
+n
+git status
+cd dotfiles_setup
+git status
+git log
+git push origin master
+git status
+cd /usr/projects/python_utils/
+n -S edit_test_push_pull.nvimSession 
+utt hello
+utt add "other: LMGP"
+utt edit
+utt report
+utt add "dev: nvim"
+l
+cd ~/
+mkcd USR_TMP/bar/foo/blu
+cd -
+rm -d USR_TMP/bar/
+rm -dr USR_TMP/bar/
+l USR_TMP/
+l USR_TMP/.cfg/
+l
+rm test_session_neovim 
+rm test_openCV.py 
+l
+cat .NERDTreeBookmarks 
+n
+l
+Jl
+l
+cd dir_path
+cd $dir_path
+echo $dir_path
+l

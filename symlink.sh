@@ -57,6 +57,7 @@ cd NeoVim/
 dotfilesDir=$(pwd)
 linkDotfile init.vim .config/nvim
 linkDotfile python.vim .config/nvim/ftplugin
+linkDotfile mymapping.vim .config/nvim/plugged/nerdtree/nerdtree_plugin
 cd ../
 
 
