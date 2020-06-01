@@ -62,3 +62,4 @@ cd ../
 
 
 echo "[INFO] symlinking done!"
+echo "sanity check remote"
