@@ -9,7 +9,7 @@ function linkDotfile {
         destFolder="${HOME}"
     else
         # else put create it at the given location
-        destFolder="${HOME}/${2}"
+        destFolder="${2}"
     fi
 
     dest="${destFolder}/${1}"
@@ -55,10 +55,14 @@ cd ../
 # Symlink NeoVim-related stuff
 cd NeoVim/
 dotfilesDir=$(pwd)
-linkDotfile init.vim .config/nvim
-linkDotfile python.vim .config/nvim/ftplugin
-linkDotfile mymapping.vim .config/nvim/plugged/nerdtree/nerdtree_plugin
+linkDotfile init.vim ~/.config/nvim
+linkDotfile python.vim ~/.config/nvim/ftplugin
+linkDotfile mymapping.vim ~/.config/nvim/plugged/nerdtree/nerdtree_plugin
 cd ../
 
+cd funcs/
+dotfilesDir=$(pwd)
+linkDotfile create_backup.sh ~/usr/local/bin/
+cd ../
 
 echo "[INFO] symlinking done!"

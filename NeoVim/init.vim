@@ -8,7 +8,7 @@
     " auto-reload buffers when changed
     autocmd FocusGained,BufEnter * :checktime
     " change current working directory to active file
-    set autochdir
+    set autochdir " <- can conflict with Fugitive plugin (if true set to 'no')
     " use filetype plugins
     :filetype plugin indent on
 " STUFF THAT NEEDS TO BE TRIED BEFORE VALIDATION AND ORGANISATION INTO .VIMRC
@@ -32,8 +32,12 @@
     Plug 'airblade/vim-gitgutter'
     " Navigation
     Plug 'preservim/nerdtree'
+    " Graphical undo tree
+    Plug 'sjl/gundo.vim'
     " Commenting
     Plug 'tpope/vim-commentary'
+    " incrementing dates... and more!
+    Plug 'tpope/vim-speeddating'
     " enhance the experience of making sessions
     Plug 'tpope/vim-obsession'
     " Focus attention
@@ -85,6 +89,9 @@
         let NERDTreeQuitOnOpen=3
         " show line nbs also in NERDTree
         let NERDTreeShowLineNumbers=0
+    " Fugitive
+        map :Gdiff :Gvdiffsplit!
+
     " Gitgutter
         set updatetime=100
         nmap <Leader>ghl :GitGutterLineHighlightsToggle<CR>
@@ -103,6 +110,9 @@
         set statusline+=%{GitStatus()}
     " python autocompletion -> Jedi-Vim
         let g:jedi#use_splits_not_buffers = "left"
+    " Gundo
+        " toggle gundo tree
+        nnoremap <leader>u :GundoToggle<CR>
 
 "--------------------------------------------------------------------------------
 
@@ -164,9 +174,12 @@
     set fillchars=stl:\ ,stlnc:\ ,vert:\ ,fold::,diff:-
     " remap the <leader> key
     :let mapleader=" "
-    " more convenient way to edit and source the init.vim config file
-    nnoremap <leader>ee :edit $MYVIMRC<CR>
-    nnoremap <leader>ss :source $MYVIMRC<CR>
+    " more convenient way to edit and source files
+    nnoremap <leader>en :vs $MYVIMRC<CR>
+    nnoremap <leader>sn :source $MYVIMRC<CR>
+    nnoremap <leader>eb :vs ~/.bashrc<CR>
+    nnoremap <leader>sb :source ~/.bashrc<CR>
+    nnoremap <leader>ss :source %<CR>
     " enable space and newline even in normal mode
     nnoremap <space> i<space><Esc>
     nnoremap <CR> a<CR><Esc>
