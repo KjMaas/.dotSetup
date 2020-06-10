@@ -1,7 +1,7 @@
-#! /bin/bash
+#!/bin/bash
 
 # ~/bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+ # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
 # sourcing message
@@ -31,8 +31,9 @@ export BROWSER="/mnt/c/Program Files/Mozilla Firefox/firefox.exe"
 # configure default text editor ('nvr' == NeoVim-remote)
 export VISUAL="nvr -o"
 export EDITOR="nvr -o"
-export DISPLAY=:0
-
+export DISPLAY=192.168.1.91:0
+# export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
+export LIBGL_ALWAYS_INDIRECT=1
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -130,25 +131,25 @@ ANACONDA_WINDOWS="/mnt/c/Users/Klaaz/anaconda3/python.exe"
 
 
 # download and install miniconda if it's not already installed
-MINICONDA_PATH="/usr/miniconda3"
+MINICONDA_PATH="/home/kjmaas/miniconda3/"
 MINICONDA_DISTRO="Miniconda3-latest-Linux-x86_64.sh"
-if [ ! -d "$MINICONDA_PATH" ]; then
-    wget "https://repo.anaconda.com/miniconda/${MINICONDA_DISTRO}" -P "/usr/"
-    bash "/usr/${MINICONDA_DISTRO}"
-    rm "/usr/${MINICONDA_DISTRO}"
+if [ ! -d "${MINICONDA_PATH}" ]; then
+    wget "https://repo.anaconda.com/miniconda/${MINICONDA_DISTRO}"
+    bash "/home/kjmaas/${MINICONDA_DISTRO}"
+    rm "/home/kjmaas/${MINICONDA_DISTRO}"
 fi
 
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/usr/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/kjmaas/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/usr/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/usr/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/kjmaas/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/kjmaas/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/usr/miniconda3/bin:$PATH"
+        export PATH="/home/kjmaas/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup

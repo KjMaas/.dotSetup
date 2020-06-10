@@ -79,6 +79,8 @@
         map &² :NERDTreeClose<CR>
         " open Nerd Tree in folder of file in active buffer
         map <Leader>² :NERDTree %:p:h<CR>
+        " show hidden files (like '.*' files)
+        let NERDTreeShowHidden=1 
         " sort nb by increasing value
         let NERDTreeNaturalSort=1
         " make NERDTree cd follow Nvim cd
@@ -157,7 +159,7 @@
 " GENERAL SPECTS =
 " ================
     " use system clipboard
-    set clipboard=unnamedplus
+    " set clipboard+=unnamedplus
     " enable mouse interaction (in all modes)
     set mouse=a
     " set default shell for neovim terminal

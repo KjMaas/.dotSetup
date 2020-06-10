@@ -9,13 +9,13 @@ sudo apt-get update && sudo apt-get full-upgrade -y
 function install {
     # check if call to package is valid 
     # which returns either '0', '1' or '2'
-    which $1 &> /dev/null
+    which ${1} &> /dev/null
 
     if [[ $? == 0 ]]; then
         echo "=== Already installed: ${1}"
     else
         echo "+++ Installing: ${1}..."
-        sudo apt-get install -y $1
+        sudo apt-get install -y ${1}
     fi
     }
 
@@ -24,7 +24,9 @@ function install {
 install git
 install htop
 install curl
-#install openvpn
+
+# Navigation
+tree
 
 # text editor!!
 install neovim
