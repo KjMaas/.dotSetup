@@ -52,6 +52,12 @@ linkDotfile .bash_history
 linkDotfile .bashrc
 cd ../
 
+# Symlink Git stuff
+cd git/
+dotfilesDir=$(pwd)
+linkDotfile .gitconfig
+cd ../
+
 # Symlink NeoVim-related stuff
 cd NeoVim/
 dotfilesDir=$(pwd)
