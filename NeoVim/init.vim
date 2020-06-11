@@ -55,17 +55,22 @@
     Plug 'ervandew/supertab'
     " Fuzzy-search
     Plug 'ctrlpvim/ctrlp.vim'
+    " enable '.' (repeat command) with plugins
+    Plug 'tpope/vim-repeat'
+    " Browsing
+    " Plug 'voldikss/vim-browser-search' " <- issue with finding browser check 'has(win32unix)'
 
+    " """"""""""""""""""""""
     " Python-related plugins
-    Plug 'tmhedberg/SimpylFold'
-    " close '(' '{' '[' ... automagically after opening them
+    " """"""""""""""""""""""
+    " close '(' '{' '[' ... automagically after opening them (and more)
     Plug 'jiangmiao/auto-pairs'
     " autocompletion for python
     Plug 'davidhalter/jedi-vim'
     " surround your word/sentence/paragraph and whatelse with anything you want
-    " Plug 'tpope/vim-surround'
-    " Browsing
-	" Plug 'voldikss/vim-browser-search' " <- issue with finding browser check 'has(win32unix)'
+    Plug 'tpope/vim-surround'
+    " Plug 'tmhedberg/SimpylFold'
+
 
     call plug#end()
 
