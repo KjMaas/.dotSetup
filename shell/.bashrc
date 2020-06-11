@@ -25,14 +25,10 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-# configure default web-browser
-export BROWSER="/mnt/c/Program Files/Mozilla Firefox/firefox.exe"
-
 # configure default text editor ('nvr' == NeoVim-remote)
 export VISUAL="nvr -o"
 export EDITOR="nvr -o"
 export DISPLAY=192.168.1.91:0
-# export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 export LIBGL_ALWAYS_INDIRECT=1
 
 # check the window size after each command and, if necessary,
@@ -82,6 +78,11 @@ xterm*|rxvt*)
     ;;
 esac
 
+# Custom paths
+if [ -f ~/.bash_paths ]; then
+    . ~/.bash_paths
+fi
+
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -103,30 +104,6 @@ fi
 # sources /etc/bash.bashrc).
 #if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 #    . /etc/bash_completion
-#fi
-
-################################################################################
-############################### GHOST CODE #####################################
-################################################################################
-## Neovim stuff
-#if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
-#    alias h='nvr -o'
-#    alias v='nvr -O'
-#    alias t='nvr --remote-tab'
-#fi
-
-
-## Anaconda and Miniconda stuff
-##########################################
-ANACONDA_WINDOWS="/mnt/c/Users/Klaaz/anaconda3/python.exe"
-#if [ -f "$ANACONDA_WINDOWS" ]; then
-#    alias python="python.exe"
-#    alias conda="conda.exe"
-#    alias ipython="ipython.exe"
-#    alias nosetests="nosetests.exe"
-#    alias pip="pip.exe"
-#    alias nvidia-smi="/mnt/c/Program\ Files/NVIDIA\ Corporation/NVSMI/nvidia-smi.exe"
-#    echo "python is now $ANACONDA_WINDOWS [$(python --version)]"
 #fi
 
 

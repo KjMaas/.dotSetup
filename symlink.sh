@@ -45,11 +45,12 @@ function linkDotfile {
 # Symlink shell stuff
 cd shell/
 dotfilesDir=$(pwd)
-linkDotfile .bash_aliases
-linkDotfile .bash_autocomplete
-linkDotfile .bash_func
-linkDotfile .bash_history
 linkDotfile .bashrc
+linkDotfile .bash_aliases
+linkDotfile .bash_paths
+linkDotfile .bash_func
+linkDotfile .bash_autocomplete
+# linkDotfile .bash_history
 cd ../
 
 # Symlink Git stuff
