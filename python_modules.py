@@ -2,7 +2,8 @@
 conda install...
 matplotlib
 -c conda-forge jupyterlab
-
+# python+NeoVim
+-c conda-forge pynvim
 
 
 

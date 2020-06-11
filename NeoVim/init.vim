@@ -60,18 +60,23 @@
     " Browsing
     " Plug 'voldikss/vim-browser-search' " <- issue with finding browser check 'has(win32unix)'
 
-    " """"""""""""""""""""""
-    " Python-related plugins
-    " """"""""""""""""""""""
     " close '(' '{' '[' ... automagically after opening them (and more)
     Plug 'jiangmiao/auto-pairs'
-    " autocompletion for python
-    Plug 'davidhalter/jedi-vim'
     " surround your word/sentence/paragraph and whatelse with anything you want
     Plug 'tpope/vim-surround'
     " Plug 'tmhedberg/SimpylFold'
 
-
+    " """"""""""""""""""""""
+    " Python-related plugins
+    " """"""""""""""""""""""
+    " autocompletion for python
+    Plug 'davidhalter/jedi-vim' "<- also checkout COC.vim
+    " syntax highlighting for Python
+    Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+    " 'PEP8' python
+    Plug 'Vimjas/vim-python-pep8-indent'
+    
+    
     call plug#end()
 
 
@@ -123,6 +128,8 @@
         let g:AutoPairsShortcutToggle = '<A-p>'
     " python autocompletion -> Jedi-Vim
         let g:jedi#use_splits_not_buffers = "left"
+    " PEP8 python
+        let python_pep8_indent_hang_closing = 1
     " Gundo
         " toggle gundo tree
         nnoremap <leader>u :GundoToggle<CR>
