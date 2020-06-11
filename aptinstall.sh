@@ -26,7 +26,7 @@ install htop
 install curl
 
 # Navigation
-tree
+install tree
 
 # text editor!!
 install neovim

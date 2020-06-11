@@ -29,7 +29,7 @@
 
     " Git versionning
     Plug 'tpope/vim-fugitive'
-    Plug 'airblade/vim-gitgutter'
+    Plug 'airblade/vim-gitgutter' " <- can slow down your Nvim xp
     " Navigation
     Plug 'preservim/nerdtree'
     " Graphical undo tree
@@ -55,17 +55,20 @@
     Plug 'ervandew/supertab'
     " Fuzzy-search
     Plug 'ctrlpvim/ctrlp.vim'
+
     " Python-related plugins
     Plug 'tmhedberg/SimpylFold'
-
-	Plug 'davidhalter/jedi-vim'
-	"Plug 'http://github.com/tpope/vim-surround'
-
+    " close '(' '{' '[' ... automagically after opening them
+    Plug 'jiangmiao/auto-pairs'
+    " autocompletion for python
+    Plug 'davidhalter/jedi-vim'
+    " surround your word/sentence/paragraph and whatelse with anything you want
+    " Plug 'tpope/vim-surround'
     " Browsing
 	" Plug 'voldikss/vim-browser-search' " <- issue with finding browser check 'has(win32unix)'
 
     call plug#end()
- 
+
 
 " ======================
 " PLUGIN CUSTOMIZATION =
@@ -110,6 +113,9 @@
           return printf('+%d ~%d -%d', a, m, r)
         endfunction
         set statusline+=%{GitStatus()}
+    " auto-pairs
+        let g:AutoPairsFlyMode = 1
+        let g:AutoPairsShortcutToggle = '<A-p>'
     " python autocompletion -> Jedi-Vim
         let g:jedi#use_splits_not_buffers = "left"
     " Gundo
@@ -159,7 +165,7 @@
 " GENERAL SPECTS =
 " ================
     " use system clipboard
-    " set clipboard+=unnamedplus
+    set clipboard+=unnamedplus
     " enable mouse interaction (in all modes)
     set mouse=a
     " set default shell for neovim terminal
@@ -207,9 +213,10 @@
     " faster scrolling
     nnoremap <C-J> <C-d>
     nnoremap <C-K> <C-u>
-    " ':w' and ':wq' -> now also available in insert and modes
+    " ':w', ':wq' and ':q!' -> now also available in insert mode
     inoremap :w<CR> <Esc>:w<CR>
     inoremap :wq<CR> <Esc>:wq<CR>
+    inoremap :q!<CR> <Esc>:q!<CR>
     " cursor properties
     :set guicursor=n:blinkon10
     :set guicursor=n:blinkoff10
