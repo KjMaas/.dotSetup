@@ -28,8 +28,18 @@ HISTFILESIZE=2000
 # configure default text editor ('nvr' == NeoVim-remote)
 export VISUAL="nvr -o"
 export EDITOR="nvr -o"
-export DISPLAY=192.168.1.91:0
-export LIBGL_ALWAYS_INDIRECT=1
+
+set_display_manually=false
+if [[ "$set_display_manually" == true ]]; then
+    export DISPLAY="172.21.224.1:0"
+    export LIBGL_ALWAYS_INDIRECT=1
+else
+    export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf
+    2>/dev/null):0
+    export LIBGL_ALWAYS_INDIRECT=1
+fi
+echo "DISPLAY = "$DISPLAY""
+
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.

@@ -27,6 +27,9 @@ install curl
 
 # Navigation
 install tree
+install fzf
+install ripgrep
+install silversearcher-ag
 
 # text editor!!
 install neovim

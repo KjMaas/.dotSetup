@@ -50,6 +50,7 @@ linkDotfile .bash_aliases
 linkDotfile .bash_paths
 linkDotfile .bash_func
 linkDotfile .bash_autocomplete
+linkDotfile .profile
 # linkDotfile .bash_history
 cd ../
 
@@ -67,6 +68,7 @@ linkDotfile python.vim ~/.config/nvim/ftplugin
 linkDotfile mymapping.vim ~/.config/nvim/plugged/nerdtree/nerdtree_plugin
 cd ../
 
+# add custom functions
 cd funcs/
 dotfilesDir=$(pwd)
 linkDotfile create_backup.sh ~/usr/local/bin/
