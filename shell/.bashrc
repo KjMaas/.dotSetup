@@ -118,7 +118,7 @@ fi
 
 
 # Load pyenv automatically when sourcing .bashrc
-export PATH="/home/kjm/.pyenv/bin:$PATH"
+export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
@@ -134,3 +134,6 @@ if ! python -c "import utt" 2>/dev/null; then
     to enable auto-completion (uses 'bash-completion')\n\n'
 fi
 # ------------------------------------------------------------------------------
+
+
+
