@@ -12,7 +12,7 @@ export dot_path="/home/kjmaas/.dotSetup/"
 export BROWSER="/mnt/c/Program Files/Mozilla Firefox/firefox.exe"
 
 # add path to 'Floki' dir
-export floki_path="/mnt/c/Users/KlaasjanMaas/"
+export floki_path="/mnt/c/Users/KlaasjanMaas/OneDrive - floki io"
 
 # create symlink to windows home folder (if it doesn't already exist)
 export WINHOME=""/mnt/c/Users/Klaaz/""
@@ -28,5 +28,5 @@ fi
 
 
 
-# add local bin folder to path (where nvr resides for example)
+# add local bin folder to path (where nvr resides for exemple)
 export PATH="$HOME/.local/bin:$PATH"
