@@ -5,10 +5,10 @@
 ##############
 
 # easy access to 'dotSetup' dir
-alias cdDot='cd $dot_path'
+alias cdDot='cd "$dot_path"'
 
 # easy access to 'Floki' dir
-alias cdF='cd $floki_path'
+alias cdF='cd "$floki_path"'
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then

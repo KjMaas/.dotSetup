@@ -6,7 +6,7 @@
 
 
 # path to .dotSetup folder
-export dot_path="/home/kjmaas/.dotSetup/"
+export dot_path="$HOME/.dotSetup/"
 
 # path to default web-browser
 export BROWSER="/mnt/c/Program Files/Mozilla Firefox/firefox.exe"
