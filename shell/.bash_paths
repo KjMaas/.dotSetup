@@ -12,7 +12,7 @@ export dot_path="/home/kjmaas/.dotSetup/"
 export BROWSER="/mnt/c/Program Files/Mozilla Firefox/firefox.exe"
 
 # add path to 'Floki' dir
-export floki_path="/mnt/d/Floki/"
+export floki_path="/mnt/c/Users/KlaasjanMaas/"
 
 # create symlink to windows home folder (if it doesn't already exist)
 export WINHOME=""/mnt/c/Users/Klaaz/""
@@ -24,3 +24,9 @@ if [ ! -L ~/winhome ]; then
 		echo "=> could not symlink Windows home directory ('$WINHOME' doesn't exist)"
 	fi
 fi
+
+
+
+
+# add local bin folder to path (where nvr resides for example)
+export PATH="$HOME/.local/bin:$PATH"
