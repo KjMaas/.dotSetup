@@ -35,3 +35,5 @@ export PKG_CONFIG_PATH
 LD_LIBRARY_PATH="$HOME/miniconda3/lib/:$LD_LIBRARY_PATH"
 export PKG_CONFIG_PATH="$HOME/miniconda3/envs/opencv/lib/:$PKG_CONFIG_PATH"
 export LD_LIBRARY_PATH
+
+export PATH="$HOME/.poetry/bin:$PATH"

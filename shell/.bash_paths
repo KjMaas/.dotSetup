@@ -14,6 +14,9 @@ export BROWSER="/mnt/c/Program Files/Mozilla Firefox/firefox.exe"
 # add path to 'Floki' dir
 export floki_path="/mnt/c/Users/KlaasjanMaas/OneDrive - floki io"
 
+# add path to 'cloud_w' dir
+export cloud_work_path="/mnt/c/Users/KlaasjanMaas/floki io"
+
 # create symlink to windows home folder (if it doesn't already exist)
 export WINHOME=""/mnt/c/Users/Klaaz/""
 if [ ! -L ~/winhome ]; then

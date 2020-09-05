@@ -1,6 +1,6 @@
 
 " set python3 as default python interpreter
-let g:python3_host_prog=expand($HOME.'/miniconda3/bin/python3')
+" let g:python3_host_prog=expand($HOME.'/miniconda3/bin/python3')
 
     " call plug#begin('~/.config/nvim/plugged')
     " " """"""""""""""""""""""

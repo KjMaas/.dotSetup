@@ -59,7 +59,10 @@
     Plug 'tpope/vim-surround'
     " debugging code... this makes NeoVim really look like an IDE...
     Plug 'puremourning/vimspector' 
-
+    " enable multiple cursors
+    Plug 'mg979/vim-visual-multi'
+    " easy search
+    Plug 'eugen0329/vim-esearch'
 
 
     " """""""""""""""""""

@@ -10,6 +10,9 @@ alias cdDot='cd "$dot_path"'
 # easy access to 'Floki' dir
 alias cdF='cd "$floki_path"'
 
+# easy access to 'cloud_w' dir
+alias cdCW='cd "$cloud_work_path"'
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
