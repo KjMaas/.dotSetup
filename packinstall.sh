@@ -2,8 +2,8 @@
 
 echo "[INFO] installing packages..."
 
-echo "+++ upgradating package manager apt-get..."
-sudo apt update && sudo apt full-upgrade -y
+echo "+++ upgradating packages..."
+sudo $PACK_MAN update && sudo $PACK_MAN full-upgrade -y
 
 
 function install {
@@ -15,7 +15,7 @@ function install {
         echo "=== Already installed: ${1}"
     else
         echo "+++ Installing: ${1}..."
-        sudo apt install -y ${1}
+        sudo $PACK_MAN install ${1}
     fi
     }
 

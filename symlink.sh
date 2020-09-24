@@ -65,13 +65,12 @@ cd NeoVim/
 dotfilesDir=$(pwd)
 linkDotfile init.vim ~/.config/nvim
 linkDotfile python.vim ~/.config/nvim/ftplugin
-linkDotfile mymapping.vim ~/.config/nvim/plugged/nerdtree/nerdtree_plugin
 cd ../
 
 # add custom functions
 cd funcs/
 dotfilesDir=$(pwd)
-linkDotfile create_backup.sh ~/usr/local/bin/
+#linkDotfile create_backup.sh ~/usr/local/bin/
 cd ../
 
 echo "[INFO] symlinking done!"

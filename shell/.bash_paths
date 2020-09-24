@@ -4,32 +4,8 @@
 # my custom paths #
 ###################
 
-
 # path to .dotSetup folder
 export dot_path="$HOME/.dotSetup/"
-
-# path to default web-browser
-export BROWSER="/mnt/c/Program Files/Mozilla Firefox/firefox.exe"
-
-# add path to 'Floki' dir
-export floki_path="/mnt/c/Users/KlaasjanMaas/OneDrive - floki io"
-
-# add path to 'cloud_w' dir
-export cloud_work_path="/mnt/c/Users/KlaasjanMaas/floki io"
-
-# create symlink to windows home folder (if it doesn't already exist)
-export WINHOME=""/mnt/c/Users/Klaaz/""
-if [ ! -L ~/winhome ]; then
-	if [ -d $WINHOME ]; then
-		ln -s $WINHOME ~/winhome
-		echo "=> windows home ($WINHOME) symlinked to '~/winhome'"
-	else
-		echo "=> could not symlink Windows home directory ('$WINHOME' doesn't exist)"
-	fi
-fi
-
-
-
 
 # add local bin folder to path (where nvr resides for exemple)
 export PATH="$HOME/.local/bin:$PATH"
