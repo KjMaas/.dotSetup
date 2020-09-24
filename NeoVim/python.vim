@@ -1,27 +1,12 @@
 
-" set python3 as default python interpreter
-" let g:python3_host_prog=expand($HOME.'/miniconda3/bin/python3')
+" set python interpreter
 
-    " call plug#begin('~/.config/nvim/plugged')
-    " " """"""""""""""""""""""
-    " " Python-related plugins
-    " " """"""""""""""""""""""
-    " " Autocompletion for python
-    " Plug 'davidhalter/jedi-vim' "<- also checkout COC.vim
-    " " Syntax highlighting for Python
-    " Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-    " " 'PEP8' python
-    " Plug 'Vimjas/vim-python-pep8-indent'
-    " " Folding python script
-    " Plug 'tmhedberg/SimpylFold'
-    " " Close '(' '{' '[' ... automagically after opening them (and more)
-    " Plug 'jiangmiao/auto-pairs'
+let g:python_host_prog = '/home/kjm/.pyenv/versions/nvim3/bin/python'
+let g:python3_host_prog = '/home/kjm/.pyenv/versions/nvim3/bin/python'
 
-    " call plug#end()
-
-" =======
-" THEME =
-" =======
+" ================
+" = PYTHON THEME =
+" ================
     " dark mode rules!
     set background=dark
     " take the best out of gruvbox

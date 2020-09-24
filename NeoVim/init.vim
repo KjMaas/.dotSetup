@@ -5,6 +5,9 @@
 
 
 " STUFF THAT NEEDS TO BE TRIED BEFORE VALIDATION AND ORGANISATION INTO .VIMRC
+    let g:python_host_prog = '/home/kjm/.pyenv/versions/nvim2/bin/python'
+    let g:python3_host_prog = '/home/kjm/.pyenv/versions/nvim3/bin/python'
+
     " auto-reload buffers when changed
     autocmd FocusGained,BufEnter * :checktime
     " change current working directory to active file
