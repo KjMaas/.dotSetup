@@ -111,3 +111,9 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/kjm/google-cloud-sdk/path.bash.inc' ]; then . '/home/kjm/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/kjm/google-cloud-sdk/completion.bash.inc' ]; then . '/home/kjm/google-cloud-sdk/completion.bash.inc'; fi
