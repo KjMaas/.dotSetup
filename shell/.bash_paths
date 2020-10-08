@@ -9,3 +9,8 @@ export dot_path="$HOME/.dotSetup/"
 
 # add local bin folder to path (where nvr resides for exemple)
 export PATH="$HOME/.local/bin:$PATH"
+
+# add texlive related stuff to path
+export PATH="$PATH:/opt/texlive/2020/bin/x86_64-linux"
+export PATH="$PATH:/opt/texlive/2020/texmf-dist/doc/man"
+export PATH="$PATH:/opt/texlive/2020/texmf-dist/doc/info"
