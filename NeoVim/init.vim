@@ -89,6 +89,10 @@
     Plug 'tmhedberg/SimpylFold'
     " Close '(' '{' '[' ... automagically after opening them (and more)
     Plug 'jiangmiao/auto-pairs'
+    " add code snippets
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
+
 
     call plug#end()
 
@@ -135,6 +139,15 @@
           return printf('+%d ~%d -%d', a, m, r)
         endfunction
         set statusline+=%{GitStatus()}
+    " esearch
+        nmap <c-f><c-f> <Plug>(esearch)
+        map  <c-f>      <Plug>(esearch-prefill)
+        " nmap <c-f>iw    <Plug>(esearch-exec)
+        " let g:esearch.regex   = 1
+        " let g:esearch.textobj = 0
+        " let g:esearch.case    = 'smart'
+        " let g:esearch.prefill = ['hlsearch', 'last', 'clipboard']
+        " let g:esearch.default_mappings = 0
     " Vimspector
         let g:vimspector_enable_mappings = 'HUMAN'
         nmap <Leader>db :call vimspector#ToggleBreakpoint()<CR>
@@ -144,10 +157,15 @@
         nmap <Leader>di :call vimspector#StepInto()<CR>
         nmap <Leader>dd :call vimspector#Launch()<CR>
         nmap <Leader>dx :VimspectorReset<CR>
-        nmap <Leader>de :VimspectorEval
-        nmap <Leader>dw :VimspectorWatch
-        nmap <Leader>ds :VimspectorShowOutput
-        packadd! vimspector
+        nmap <Leader>de :VimspectorEval 
+        nmap <Leader>dw :VimspectorWatch 
+        nmap <Leader>ds :VimspectorShowOutput 
+        " packadd! vimspector
+    " ultisnips
+        let g:UltiSnipsExpandTrigger="<tab>"
+        let g:UltiSnipsJumpForwardTrigger="<c-b>"
+        let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+        let g:UltiSnipsEditSplit="vertical"
     " Gundo
         " toggle gundo tree
         nnoremap <leader>u :GundoToggle<CR>
