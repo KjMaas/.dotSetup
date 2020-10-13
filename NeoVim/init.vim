@@ -11,7 +11,7 @@
     " auto-reload buffers when changed
     autocmd FocusGained,BufEnter * :checktime
     " change current working directory to active file
-    set autochdir " <- can conflict with Fugitive plugin (if true set to 'no')
+    set noautochdir " <- can conflict with Fugitive plugin (if true set to 'no')
     " use filetype plugins
     :filetype plugin indent on
 " STUFF THAT NEEDS TO BE TRIED BEFORE VALIDATION AND ORGANISATION INTO .VIMRC
@@ -183,12 +183,13 @@
         let g:fzf_history_dir = '~/.local/share/fzf-history'
 
         map <leader>f :Files<CR>
+        map <leader>gf :GFiles<CR>
         map <leader>b :Buffers<CR>
         nnoremap <leader>r :Rg<CR>
         nnoremap <leader>t :Tags<CR>
         nnoremap <leader>m :Marks<CR>
         " Border color
-        let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
+        let g:fzf_layout = {'up':'~80%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
         " defaults
         let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
         let $FZF_DEFAULT_COMMAND="rg --files --hidden"
