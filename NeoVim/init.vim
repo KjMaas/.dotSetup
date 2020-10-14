@@ -32,10 +32,17 @@
     " install plugins:
     call plug#begin('~/.config/nvim/plugged')
 
-    " Navigation
-    Plug 'preservim/nerdtree'
+    " Navigation <
+    " Plug 'preservim/nerdtree'
+
     " Graphical undo tree
     Plug 'sjl/gundo.vim'
+
+    " Improved '*' search
+    Plug 'bronson/vim-visual-star-search'
+    " Automatically remove search highlights when done
+    Plug 'haya14busa/is.vim'
+
     " Commenting
     Plug 'tpope/vim-commentary'
     " Incrementing dates... and more!
@@ -142,12 +149,12 @@
     " esearch
         nmap <c-f><c-f> <Plug>(esearch)
         map  <c-f>      <Plug>(esearch-prefill)
-        " nmap <c-f>iw    <Plug>(esearch-exec)
+        nmap <c-f>iw    <Plug>(esearch-exec)
         " let g:esearch.regex   = 1
         " let g:esearch.textobj = 0
         " let g:esearch.case    = 'smart'
-        " let g:esearch.prefill = ['hlsearch', 'last', 'clipboard']
-        " let g:esearch.default_mappings = 0
+        let g:esearch.prefill = ['hlsearch', 'last', 'clipboard']
+        let g:esearch.default_mappings = 1
     " Vimspector
         let g:vimspector_enable_mappings = 'HUMAN'
         nmap <Leader>db :call vimspector#ToggleBreakpoint()<CR>
@@ -371,7 +378,7 @@
     set ignorecase smartcase
     " highlight search matches
     set hlsearch
-    " remove highlight
+    " remove highlights manually
     nnoremap <Esc> :nohlsearch<CR><Esc>
     inoremap <Esc> <Esc>:nohlsearch<CR>i
 
@@ -388,11 +395,9 @@
     set expandtab
     set shiftwidth=4
     set shiftround
-    " use the indent of the previous line
-    map <leader>i :setlocal autoindent<CR>
-    map <leader>I :setlocal noautoindent<CR>
-    " map <leader>c :setlocal formatoptions-=cro<CR>
-    " map <leader>C :setlocal formatoptions=cro<CR>
+    " use the indent and formatting of the previous line
+    map <leader>i :setlocal noautoindent <bar> setlocal formatoptions-=cro<CR>
+    map <leader>I :setlocal autoindent <bar> setlocal formatoptions=cro<CR>
 
 
 " ====================
@@ -427,6 +432,14 @@
     inoremap <C-k> <Esc>:m .-2<CR>==gi
     vnoremap <C-j> :m '>+1<CR>gv=gv
     vnoremap <C-k> :m '<-2<CR>gv=gv
+    " augmented search-and-replace
+    nnoremap <Leader>r :%s///g<Left><Left>
+    nnoremap <Leader>rc :%s///gc<Left><Left><Left>
+    xnoremap <Leader>r :s///g<Left><Left>
+    xnoremap <Leader>rc :s///gc<Left><Left><Left>
+    " augmented substitude (with sweet '.' capabilities)
+    nnoremap <silent> s* :let @/='\<'.expand('<cword>').'\>'<CR>cgn
+    xnoremap <silent> s* "sy:let @/=@s<CR>cgn
 
 
 " =============
