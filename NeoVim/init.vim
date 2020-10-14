@@ -17,100 +17,19 @@
 " STUFF THAT NEEDS TO BE TRIED BEFORE VALIDATION AND ORGANISATION INTO .VIMRC
 
 
-"=========================================
-"=            Plugin section             =
-"=        (managed with vim-plug:        =
-"= https://github.com/junegunn/vim-plug) =
-"=========================================
-    " auto-install vim-plug manager if it isn't already done:
-    if empty(glob('~/.config/nvim/autoload/plug.vim'))
-    !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall | source $MYVIMRC
-    endif
 
-    " install plugins:
-    call plug#begin('~/.config/nvim/plugged')
-
-    " Navigation <
-    " Plug 'preservim/nerdtree'
-
-    " Graphical undo tree
-    Plug 'sjl/gundo.vim'
-
-    " Improved '*' search
-    Plug 'bronson/vim-visual-star-search'
-    " Automatically remove search highlights when done
-    Plug 'haya14busa/is.vim'
-
-    " Commenting
-    Plug 'tpope/vim-commentary'
-    " Incrementing dates... and more!
-    Plug 'tpope/vim-speeddating'
-    " Enhance the experience of making sessions
-    Plug 'tpope/vim-obsession'
-    " Focus attention
-    Plug 'junegunn/goyo.vim'
-    " Aspect
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    Plug 'junegunn/seoul256.vim' " <- color scheme
-    Plug 'morhetz/gruvbox'       " <- color scheme
-    " Visualize colors
-    Plug 'chrisbra/Colorizer'
-    " Tab completion
-    Plug 'ervandew/supertab'
-    " Fuzzy-search
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
-    Plug 'junegunn/fzf.vim'
-    " Enable '.' (repeat command) with plugins
-    Plug 'tpope/vim-repeat'
-    " Surround your word/sentence/paragraph and whatelse with anything you want
-    Plug 'tpope/vim-surround'
-    " debugging code... this makes NeoVim really look like an IDE...
-    Plug 'puremourning/vimspector' 
-    " enable multiple cursors
-    Plug 'mg979/vim-visual-multi'
-    " easy search
-    Plug 'eugen0329/vim-esearch'
-
-
-    " """""""""""""""""""
-    " Git-related plugins
-    " """""""""""""""""""
-    " Git versionning
-    Plug 'tpope/vim-fugitive'
-    Plug 'airblade/vim-gitgutter' " <- can slow down your Nvim xp, maybe?
-    Plug 'tpope/vim-rhubarb' " <- shortcut to repo on Ghub
-
-    " """"""""""""""""""""""
-    " Python-related plugins
-    " """"""""""""""""""""""
-    " Autocompletion for python
-    Plug 'davidhalter/jedi-vim' "<- also checkout COC.vim
-    " Syntax highlighting for Python
-    Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-    " 'PEP8' python
-    Plug 'Vimjas/vim-python-pep8-indent'
-    " Folding python script
-    Plug 'tmhedberg/SimpylFold'
-    " Close '(' '{' '[' ... automagically after opening them (and more)
-    Plug 'jiangmiao/auto-pairs'
-    " add code snippets
-    Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
-
-
-    call plug#end()
+source $HOME/.dotSetup/NeoVim/vim-plug/plugins.vim
 
 
 " ======================
 " PLUGIN CUSTOMIZATION =
 " ======================
+source $HOME/.dotSetup/NeoVim/plug-config/coc.vim
+
     " toggle Goyo on and off
         map <leader>g :Goyo<CR>
     " Supertab
-        let g:SuperTabDefaultCompletionType = "<C-n>"
+        " let g:SuperTabDefaultCompletionType = "<C-n>"
     " NerdTree
         map ² :NERDTree<CR>
         map &² :NERDTreeClose<CR>
@@ -153,8 +72,8 @@
         " let g:esearch.regex   = 1
         " let g:esearch.textobj = 0
         " let g:esearch.case    = 'smart'
-        let g:esearch.prefill = ['hlsearch', 'last', 'clipboard']
-        let g:esearch.default_mappings = 1
+        " let g:esearch.prefill = ['hlsearch', 'last', 'clipboard']
+        " let g:esearch.default_mappings = 1
     " Vimspector
         let g:vimspector_enable_mappings = 'HUMAN'
         nmap <Leader>db :call vimspector#ToggleBreakpoint()<CR>
@@ -169,10 +88,10 @@
         nmap <Leader>ds :VimspectorShowOutput 
         " packadd! vimspector
     " ultisnips
-        let g:UltiSnipsExpandTrigger="<tab>"
-        let g:UltiSnipsJumpForwardTrigger="<c-b>"
-        let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-        let g:UltiSnipsEditSplit="vertical"
+        " let g:UltiSnipsExpandTrigger="<tab>"
+        " let g:UltiSnipsJumpForwardTrigger="<c-b>"
+        " let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+        " let g:UltiSnipsEditSplit="vertical"
     " Gundo
         " toggle gundo tree
         nnoremap <leader>u :GundoToggle<CR>
