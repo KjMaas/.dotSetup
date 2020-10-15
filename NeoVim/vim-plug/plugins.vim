@@ -83,7 +83,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'jiangmiao/auto-pairs'
     " add code snippets
     " Plug 'SirVer/ultisnips'
-    " Plug 'honza/vim-snippets'
+    Plug 'honza/vim-snippets'
 
 
 call plug#end()

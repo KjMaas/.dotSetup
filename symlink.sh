@@ -64,7 +64,9 @@ cd ../
 cd NeoVim/
 dotfilesDir=$(pwd)
 linkDotfile init.vim ~/.config/nvim
-linkDotfile python.vim ~/.config/nvim/ftplugin
+linkDotfile coc-settings.json ~/.config/nvim
+linkDotfile snips/python.snippets ~/.config/nvim
+linkDotfile ftplugin/python.vim ~/.config/nvim
 cd ../
 
 # add custom functions
