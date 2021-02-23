@@ -25,5 +25,5 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-alias l='ls -alF'
-alias n='nvim'
+alias l='ls -ahlF'
+alias n='nvim '

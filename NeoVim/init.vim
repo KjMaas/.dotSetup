@@ -111,6 +111,7 @@ source $HOME/.dotSetup/NeoVim/plug-config/coc.vim
         map <leader>f :Files<CR>
         map <leader>gf :GFiles<CR>
         map <leader>b :Buffers<CR>
+        map <leader>gc :Commits<CR>
         nnoremap <leader>r :Rg<CR>
         nnoremap <leader>t :Tags<CR>
         nnoremap <leader>m :Marks<CR>

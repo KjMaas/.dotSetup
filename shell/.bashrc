@@ -6,9 +6,9 @@
 
 # sourcing message
 echo "
-------------------------------
-> [INFO] sourcing .bashrc... <
-------------------------------
+-----------------------
+> sourcing .bashrc... <
+-----------------------
 " | lolcat -p 0.1 -F 0.01 -a -d 1 -s 10
 
 # If not running interactively, don't do anything
@@ -52,12 +52,12 @@ force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+        # We have color support; assume it's compliant with Ecma-48
+        # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+        # a case would tend to support setf rather than setaf.)
+        color_prompt=yes
     else
-	color_prompt=
+        color_prompt=
     fi
 fi
 
@@ -76,6 +76,46 @@ xterm*|rxvt*)
 *)
     ;;
 esac
+
+
+function __promptC (){
+    local EXIT="$?"
+    local White="\[\033[00;00m\]"
+    local WhiteB="\[\033[01;00m\]"
+    local Blue="\[\033[00;36m\]"
+    local BlueB="\[\033[01;36m\]"
+    local Green="\[\033[00;32m\]"
+    local GreenB="\[\033[01;32m\]"
+    local Red="\[\033[00;31m\]"
+    local RedB="\[\033[01;31m\]"
+    local Yellow="\[\033[00;33m\]"
+    local YellowB="\[\033[01;33m\]"
+    if [[ $EXIT != 0 ]]; then
+
+        PS1="\n${BlueB}\u${WhiteB}@${GreenB}\h${White}:${Green}\w"
+        local line="`printf -vch "%${COLUMNS}s" ""; printf "%s" "${ch// /-}"`"
+        local dts="`date +"%d-%b-%Y %k:%M"`"
+
+        # Git in prompt
+        ref=$(git symbolic-ref HEAD 2> /dev/null | cut -d'/' -f3 )
+        if [[ ! -z $ref ]]; then
+            local stats=$(git diff --shortstat 2> /dev/null | sed -e 's/[a-z,]*//g')
+            local stats=$(echo $stats | sed -e 's/\(^.[0-9]*\)\ /\[\1\]:/g' -e 's/\ //g')
+            PS1="${PS1} ${Yellow}--- ${GreenB}${dts} ${Yellow}${line:$((${#dts}+${#PS1}+${#ref}+${#stats}))} ${YellowB}[ ${ref} ${stats} ]"
+        else
+            PS1="${PS1} ${Yellow}--- ${GreenB}${dts} ${Yellow}${line:$((${#dts}+${#PS1}))}"
+        fi
+
+        PS1+="\n${RedB}(x)-> ${WhiteB}\$ "
+
+    else
+        PS1="\n${BlueB}$(date +"%k:%M") ${GreenB}(✔) ${WhiteB}\$ "
+    fi
+
+
+}
+PROMPT_COMMAND=__promptC
+
 
 # Custom paths
 if [ -f ~/.bash_paths ]; then
