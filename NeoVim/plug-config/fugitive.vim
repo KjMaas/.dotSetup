@@ -1,0 +1,2 @@
+" Fugitive
+map :Gdiff :Gvdiffsplit!

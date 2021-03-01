@@ -112,7 +112,6 @@ function __promptC (){
         PS1="\n${BlueB}$(date +"%k:%M") ${GreenB}(✔) ${WhiteB}\$ "
     fi
 
-
 }
 PROMPT_COMMAND=__promptC
 

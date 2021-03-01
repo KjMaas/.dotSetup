@@ -16,8 +16,13 @@ endif
 " install plugins:
 call plug#begin('~/.config/nvim/autoload/plugged')
 
-    " Navigation <
-    " Plug 'preservim/nerdtree'
+    " Navigation
+    Plug 'justinmk/vim-sneak'
+
+    " window management
+    Plug 'fabi1cazenave/suckless.vim'
+    " terminal management
+    Plug 'fabi1cazenave/termopen.vim'
     " Tab completion
     " Plug 'ervandew/supertab'
 
@@ -44,9 +49,16 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'morhetz/gruvbox'       " <- color scheme
     " Visualize colors
     Plug 'chrisbra/Colorizer'
+    
     " Fuzzy-search
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
-    Plug 'junegunn/fzf.vim'
+    " Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
+    " Plug 'junegunn/fzf.vim'
+    
+    " neovim telescope
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+
     " Enable '.' (repeat command) with plugins
     Plug 'tpope/vim-repeat'
     " Surround your word/sentence/paragraph and whatelse with anything you want
@@ -54,9 +66,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " debugging code... this makes NeoVim really look like an IDE...
     Plug 'puremourning/vimspector' 
     " enable multiple cursors
-    Plug 'mg979/vim-visual-multi'
+    " Plug 'mg979/vim-visual-multi'
     " easy search
-    Plug 'eugen0329/vim-esearch'
+    " Plug 'eugen0329/vim-esearch'
 
 
     " """""""""""""""""""
@@ -71,8 +83,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Python-related plugins
     " """"""""""""""""""""""
     " Autocompletion for python
-    Plug 'davidhalter/jedi-vim'
     Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+    " Plug 'davidhalter/jedi-vim'
     " Syntax highlighting for Python
     Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
     " 'PEP8' python
@@ -94,3 +106,5 @@ autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \|   PlugInstall --sync | q
   \| endif
+
+

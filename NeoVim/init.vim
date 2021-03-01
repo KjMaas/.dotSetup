@@ -1,4 +1,4 @@
-
+ 
 " ####################
 " My NeoVim settings #
 " ####################
@@ -17,7 +17,6 @@
 " STUFF THAT NEEDS TO BE TRIED BEFORE VALIDATION AND ORGANISATION INTO .VIMRC
 
 
-
 source $HOME/.dotSetup/NeoVim/vim-plug/plugins.vim
 
 
@@ -25,157 +24,55 @@ source $HOME/.dotSetup/NeoVim/vim-plug/plugins.vim
 " PLUGIN CUSTOMIZATION =
 " ======================
 source $HOME/.dotSetup/NeoVim/plug-config/coc.vim
-
-    " toggle Goyo on and off
-        map <leader>g :Goyo<CR>
-    " Supertab
-        " let g:SuperTabDefaultCompletionType = "<C-n>"
-    " NerdTree
-        map ² :NERDTree<CR>
-        map &² :NERDTreeClose<CR>
-        " open Nerd Tree in folder of file in active buffer
-        map <Leader>² :NERDTree %:p:h<CR>
-        " show hidden files (like '.*' files)
-        let NERDTreeShowHidden=1 
-        " sort nb by increasing value
-        let NERDTreeNaturalSort=1
-        " make NERDTree cd follow Nvim cd
-        let NERDTreeChDirMode=3
-        " prevent certain files from showing up in NERDTree
-        let NERDTreeIgnore=['\~$', '^__pycache__$[[dir]]']
-        " quit NERDTree when opening a file
-        let NERDTreeQuitOnOpen=3
-        " show line nbs also in NERDTree
-        let NERDTreeShowLineNumbers=0
-    " Fugitive
-        map :Gdiff :Gvdiffsplit!
-    " Gitgutter
-        set updatetime=100
-        nmap <Leader>ghl :GitGutterLineHighlightsToggle<CR>
-        nmap <Leader>ghn :GitGutterLineNrHighlightsToggle<CR>
-        let g:gitgutter_map_keys = 1
-        nmap ghp <Plug>(GitGutterPreviewHunk)
-        nmap ghs <Plug>(GitGutterStageHunk)
-        nmap ghu <Plug>(GitGutterUndoHunk)
-        nmap [c <Plug>(GitGutterPrevHunk)
-        nmap ]c <Plug>(GitGutterNextHunk)
-        " show changes in the status bar
-        function! GitStatus()
-          let [a,m,r] = GitGutterGetHunkSummary()
-          return printf('+%d ~%d -%d', a, m, r)
-        endfunction
-        set statusline+=%{GitStatus()}
-    " esearch
-        nmap <c-f><c-f> <Plug>(esearch)
-        map  <c-f>      <Plug>(esearch-prefill)
-        nmap <c-f>iw    <Plug>(esearch-exec)
-        " let g:esearch.regex   = 1
-        " let g:esearch.textobj = 0
-        " let g:esearch.case    = 'smart'
-        " let g:esearch.prefill = ['hlsearch', 'last', 'clipboard']
-        " let g:esearch.default_mappings = 1
-    " Vimspector
-        let g:vimspector_enable_mappings = 'HUMAN'
-        nmap <Leader>db :call vimspector#ToggleBreakpoint()<CR>
-        nmap <Leader>dn :call vimspector#Continue()<CR>
-        nmap <Leader>do :call vimspector#StepOver()<CR>
-        nmap <Leader>dO :call vimspector#StepOut()<CR>
-        nmap <Leader>di :call vimspector#StepInto()<CR>
-        nmap <Leader>dd :call vimspector#Launch()<CR>
-        nmap <Leader>dx :VimspectorReset<CR>
-        nmap <Leader>de :VimspectorEval 
-        nmap <Leader>dw :VimspectorWatch 
-        nmap <Leader>ds :VimspectorShowOutput 
-        " packadd! vimspector
-    " ultisnips
-        " let g:UltiSnipsExpandTrigger="<tab>"
-        " let g:UltiSnipsJumpForwardTrigger="<c-b>"
-        " let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-        " let g:UltiSnipsEditSplit="vertical"
-    " Gundo
-        " toggle gundo tree
-        nnoremap <leader>u :GundoToggle<CR>
-    " FZF
-        " This is the default extra key bindings
-        let g:fzf_action = {
-                    \ 'ctrl-t': 'tab split',
-                    \ 'ctrl-x': 'split',
-                    \ 'ctrl-v': 'vsplit' }
-
-        " Enable per-command history.
-        " CTRL-N and CTRL-P will be automatically bound to next-history and
-        " previous-history instead of down and up. If you don't like the change,
-        " explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
-        let g:fzf_history_dir = '~/.local/share/fzf-history'
-
-        map <leader>f :Files<CR>
-        map <leader>gf :GFiles<CR>
-        map <leader>b :Buffers<CR>
-        map <leader>gc :Commits<CR>
-        nnoremap <leader>r :Rg<CR>
-        nnoremap <leader>t :Tags<CR>
-        nnoremap <leader>m :Marks<CR>
-        " Border color
-        let g:fzf_layout = {'up':'~80%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
-        " defaults
-        let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
-        let $FZF_DEFAULT_COMMAND="rg --files --hidden"
-        " Customize fzf colors to match your color scheme
-        let g:fzf_colors =
-                    \ { 'fg':      ['fg', 'Normal'],
-                    \ 'bg':      ['bg', 'Normal'],
-                    \ 'hl':      ['fg', 'Comment'],
-                    \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-                    \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-                    \ 'hl+':     ['fg', 'Statement'],
-                    \ 'info':    ['fg', 'PreProc'],
-                    \ 'border':  ['fg', 'Ignore'],
-                    \ 'prompt':  ['fg', 'Conditional'],
-                    \ 'pointer': ['fg', 'Exception'],
-                    \ 'marker':  ['fg', 'Keyword'],
-                    \ 'spinner': ['fg', 'Label'],
-                    \ 'header':  ['fg', 'Comment'] }
-
-
-
-
-"--------------------------------------------------------------------------------
+source $HOME/.dotSetup/NeoVim/plug-config/esearch.vim
+source $HOME/.dotSetup/NeoVim/plug-config/fugitive.vim
+" source $HOME/.dotSetup/NeoVim/plug-config/fzf.vim
+source $HOME/.dotSetup/NeoVim/plug-config/gitgutter.vim
+source $HOME/.dotSetup/NeoVim/plug-config/goyo.vim
+source $HOME/.dotSetup/NeoVim/plug-config/gundo.vim
+source $HOME/.dotSetup/NeoVim/plug-config/sneak.vim
+source $HOME/.dotSetup/NeoVim/plug-config/suckless.vim
+source $HOME/.dotSetup/NeoVim/plug-config/telescope.vim
+source $HOME/.dotSetup/NeoVim/plug-config/termopen.vim
+source $HOME/.dotSetup/NeoVim/plug-config/ultisnips.vim
+source $HOME/.dotSetup/NeoVim/plug-config/vimspector.vim
 
 " =========
 " FOLDING =
 " =========
     " folding settings (use 'za' to open/close a fold)
-    set foldmethod=indent   " fold based on indent
-    set foldnestmax=10      " deepest fold is 10 levels
-    set nofoldenable        " (don't) fold by default
-    set foldlevel=2         " ...
+        set foldmethod=indent   " fold based on indent
+        set foldnestmax=5      " deepest fold is 7 levels
+        set nofoldenable        " (don't) fold by default
+        set foldlevel=2         " ...
     " Disable code folding in Markdown
-    let g:vim_markdown_folding_disabled=1
+        let g:vim_markdown_folding_disabled=1
 
 
 " =======
 " THEME =
 " =======
     " dark mode rules!
-    set background=dark
+        set background=dark
     " take the best out of gruvbox
-    let g:gruvbox_italic=1
-    set termguicolors
+        let g:gruvbox_italic=1
+        set termguicolors
     " change color theme:
-    colorscheme gruvbox" other themes: 'seoul256', ''
+        " other themes: 'seoul256', ''
+        colorscheme gruvbox
     " change airline theme:
-    let airline_theme='gruvbox' " other themes: 'distinguished', ''
+        let airline_theme='gruvbox' " other themes: 'distinguished', ''
     " do not show in which mode you are (now handled by airline)
-    set noshowmode
+        set noshowmode
     " cursor properties
-    :set guicursor=n:blinkon10
-    :set guicursor=n:blinkoff10
-    :set guicursor=n:blinkwait10
-    :highlight Cursor gui=reverse
-    :highlight Cursor gui=NONE guifg=bg guibg=fg
+        :set guicursor=n:blinkon10
+        :set guicursor=n:blinkoff10
+        :set guicursor=n:blinkwait10
+        :highlight Cursor gui=reverse
+        :highlight Cursor gui=NONE guifg=bg guibg=fg
     " Transparent Background (For i3 and compton)
-    highlight Normal guibg=NONE ctermbg=NONE
-    highlight LineNr guibg=NONE ctermbg=NONE
+        highlight Normal guibg=NONE ctermbg=NONE
+        highlight LineNr guibg=NONE ctermbg=NONE
 
 
 
@@ -183,97 +80,97 @@ source $HOME/.dotSetup/NeoVim/plug-config/coc.vim
 " ================
 " GENERAL SPECTS =
 " ================
-    " use system clipboard
-    set clipboard+=unnamedplus
-    " enable mouse interaction (in all modes)
-    set mouse=a
-    " set default shell for neovim terminal
-    :set shell=bash
-    " how many commands you can undo
-    set history=1000
-    " display the cursor position in the lower-right position of the window
-    set ruler
-    " display line number in front of each line (with relative nb for current line)
-    set number relativenumber
-    " keep a certain number of lines from top or bottom while scrolling
-    set scrolloff=3
-    " statusline (current & non-current), vertical, fold and diff filling characters
-    set fillchars=stl:\_,stlnc:\-,vert:\|,fold::,diff:-
     " remap the <leader> key
-    :let mapleader=" "
+        :let mapleader=" "
+    " use system clipboard
+        set clipboard+=unnamedplus
+    " enable mouse interaction (in all modes)
+        set mouse=a
+    " set default shell for neovim terminal
+        :set shell=bash
+    " how many commands you can undo
+        set history=1000
+    " display the cursor position in the lower-right position of the window
+        set ruler
+    " display line number in front of each line (with relative nb for current line)
+        set number relativenumber
+    " keep a certain number of lines from top or bottom while scrolling
+        set scrolloff=3
+    " statusline (current & non-current), vertical, fold and diff filling characters
+        set fillchars=stl:\_,stlnc:\-,vert:\|,fold::,diff:-
     " more convenient way to edit and source files
-    nnoremap <leader>en :vs $MYVIMRC<CR>
-    nnoremap <leader>sn :source $MYVIMRC<CR>
-    nnoremap <leader>eb :vs ~/.bashrc<CR>
-    nnoremap <leader>sb :source ~/.bashrc<CR>
-    nnoremap <leader>ss :source %<CR>
+        nnoremap <leader>en :vs $MYVIMRC<CR>
+        nnoremap <leader>sn :source $MYVIMRC<CR>
+        nnoremap <leader>eb :vs ~/.bashrc<CR>
+        nnoremap <leader>sb :source ~/.bashrc<CR>
+        nnoremap <leader>ss :source %<CR>
     " enable space and newline even in normal mode
-    nnoremap <space> i<space><Esc>
-    nnoremap <CR> a<CR><Esc>
-    nnoremap <backspace> i<backspace><Esc>
+        nnoremap <space> i<space><Esc>
+        nnoremap <CR> a<CR><Esc>
+        nnoremap <backspace> <Left>x
     " make backspace consistent with other programs
-    set backspace=indent,eol,start
+        set backspace=indent,eol,start
     " enable spell checking
-    map <F2> :setlocal spell! spelllang=en_us<CR>
+        map <F2> :setlocal spell! spelllang=en_us<CR>
     " Red underline for spelling errors
-    hi clear SpellBad
-    hi SpellBad cterm=underline ctermfg=009 guifg=#ff0000
+        hi clear SpellBad
+        hi SpellBad cterm=underline ctermfg=009 guifg=#ff0000
  
 
 " ============
 " navigation =
 " ============
     " go to normal mode from insert or terminal mode with 'jk'
-    inoremap jk <Esc>
-    tnoremap jk <C-\><C-n>
+        inoremap jk <Esc>
+        tnoremap jk <C-\><C-n>
     " move into wrapped lines
-    nnoremap k gk
-    nnoremap j gj
+        nnoremap k gk
+        nnoremap j gj
     " faster scrolling
-    nnoremap <C-J> <C-d>
-    nnoremap <C-K> <C-u>
+        " nnoremap <C-J> <C-d>
+        " nnoremap <C-K> <C-u>
     " ':w', ':wq' and ':q!' -> now also available in insert mode
-    inoremap :w<CR> <Esc>:w<CR>
-    inoremap :wq<CR> <Esc>:wq<CR>
-    inoremap :q!<CR> <Esc>:q!<CR>
+        inoremap :w<CR> <Esc>:w<CR>
+        inoremap :wq<CR> <Esc>:wq<CR>
+        inoremap :q!<CR> <Esc>:q!<CR>
 
 
 " ==================
 " SPLIT MANAGEMENT =
 " ==================
     " change default window spiting
-    set splitright splitbelow
+        " set splitright splitbelow
     " create a new Vsplit/Hsplit with a terminal now made easy
-    nnoremap <Leader>v :vs <bar> :term<CR>i
-    nnoremap <Leader>s :sp <bar> :term<CR>i
+        " nnoremap <Leader>v :vs <bar> :term<CR>i
+        " nnoremap <Leader>s :sp <bar> :term<CR>i
     " enhance window-switching experience
-    nnoremap <A-h> <C-w>h
-    nnoremap <A-j> <C-w>j
-    nnoremap <A-k> <C-w>k
-    nnoremap <A-l> <C-w>l
-    inoremap <A-h> <Esc><C-w>h
-    inoremap <A-j> <Esc><C-w>j
-    inoremap <A-k> <Esc><C-w>k
-    inoremap <A-l> <Esc><C-w>l
-    tnoremap <A-h> <C-\><C-n><C-w>h
-    tnoremap <A-j> <C-\><C-n><C-w>j
-    tnoremap <A-k> <C-\><C-n><C-w>k
-    tnoremap <A-l> <C-\><C-n><C-w>l
+        " nnoremap <A-h> <C-w>h
+        " nnoremap <A-j> <C-w>j
+        " nnoremap <A-k> <C-w>k
+        " nnoremap <A-l> <C-w>l
+        " inoremap <A-h> <Esc><C-w>h
+        " inoremap <A-j> <Esc><C-w>j
+        " inoremap <A-k> <Esc><C-w>k
+        " inoremap <A-l> <Esc><C-w>l
+        " tnoremap <A-h> <C-\><C-n><C-w>h
+        " tnoremap <A-j> <C-\><C-n><C-w>j
+        " tnoremap <A-k> <C-\><C-n><C-w>k
+        " tnoremap <A-l> <C-\><C-n><C-w>l
     " adjust split sizes
-    noremap <silent> <C-Left> :vertical resize -3<CR>
-    noremap <silent> <C-Right> :vertical resize +3<CR>
-    noremap <silent> <C-Up> :resize +3<CR>
-    noremap <silent> <C-Down> :resize -3<CR>
+        " noremap <silent> <C-Left> :vertical resize -3<CR>
+        " noremap <silent> <C-Right> :vertical resize +3<CR>
+        " noremap <silent> <C-Up> :resize +3<CR>
+        " noremap <silent> <C-Down> :resize -3<CR>
     " invert vert to horiz or horiz to vert splits
-    map <leader>l <C-w>t<C-w>H
-    map <leader>j <C-w>t<C-w>K
+        " map <leader>l <C-w>t<C-w>H
+        " map <leader>j <C-w>t<C-w>K
 
 
 " ================
 " TAB MANAGEMENT =
 " ================
     " create a new tab with a terminal now made easy
-    nnoremap <Leader>t :tabnew <bar> :term<CR>i
+    " nnoremap <Leader>t :tabnew <bar> :term<CR>i
 
 
 " =========================
