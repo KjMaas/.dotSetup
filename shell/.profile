@@ -53,15 +53,3 @@ export PACK_MAN
 export DIST_LIKE
 echo "       --| PACK_MAN=$PACK_MAN |--| DIST_LIKE=$DIST_LIKE |--"
 
-
-
-# # add path to packages
-# # run the following command to know where 'pkg-config' is looking for packages:
-# # $ pkg-config --variable pc_path pkg-config
-# export PKG_CONFIG_PATH="$HOME/miniconda3/envs/opencv/lib/pkgconfig/:$PKG_CONFIG_PATH"
-# export PKG_CONFIG_PATH
-
-# LD_LIBRARY_PATH="$HOME/miniconda3/lib/:$LD_LIBRARY_PATH"
-# export PKG_CONFIG_PATH="$HOME/miniconda3/envs/opencv/lib/:$PKG_CONFIG_PATH"
-# export LD_LIBRARY_PATH
-

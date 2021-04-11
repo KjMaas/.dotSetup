@@ -17,13 +17,13 @@
 " STUFF THAT NEEDS TO BE TRIED BEFORE VALIDATION AND ORGANISATION INTO .VIMRC
 
 
-source $HOME/.dotSetup/NeoVim/vim-plug/plugins.vim
+ source $HOME/.dotSetup/NeoVim/vim-plug/plugins.vim
 
 
 " ======================
 " PLUGIN CUSTOMIZATION =
 " ======================
-source $HOME/.dotSetup/NeoVim/plug-config/coc.vim
+" source $HOME/.dotSetup/NeoVim/plug-config/coc.vim
 source $HOME/.dotSetup/NeoVim/plug-config/esearch.vim
 source $HOME/.dotSetup/NeoVim/plug-config/fugitive.vim
 " source $HOME/.dotSetup/NeoVim/plug-config/fzf.vim
@@ -31,11 +31,18 @@ source $HOME/.dotSetup/NeoVim/plug-config/gitgutter.vim
 source $HOME/.dotSetup/NeoVim/plug-config/goyo.vim
 source $HOME/.dotSetup/NeoVim/plug-config/gundo.vim
 source $HOME/.dotSetup/NeoVim/plug-config/sneak.vim
+source $HOME/.dotSetup/NeoVim/plug-config/startify.vim
 source $HOME/.dotSetup/NeoVim/plug-config/suckless.vim
-source $HOME/.dotSetup/NeoVim/plug-config/telescope.vim
+luafile $HOME/.dotSetup/NeoVim/plug-config/treesitter.lua
 source $HOME/.dotSetup/NeoVim/plug-config/termopen.vim
 source $HOME/.dotSetup/NeoVim/plug-config/ultisnips.vim
 source $HOME/.dotSetup/NeoVim/plug-config/vimspector.vim
+" Fuzzy-search
+source $HOME/.dotSetup/NeoVim/plug-config/telescope.vim
+" LSP
+source $HOME/.dotSetup/NeoVim/plug-config/lspconfig.vim
+luafile $HOME/.dotSetup/NeoVim/plug-config/compe.lua
+luafile $HOME/.dotSetup/NeoVim/lua/lsp/python-ls.lua
 
 " =========
 " FOLDING =
@@ -81,7 +88,7 @@ source $HOME/.dotSetup/NeoVim/plug-config/vimspector.vim
 " GENERAL SPECTS =
 " ================
     " remap the <leader> key
-        :let mapleader=" "
+        :let mapleader="\<Space>"
     " use system clipboard
         set clipboard+=unnamedplus
     " enable mouse interaction (in all modes)
@@ -127,8 +134,33 @@ source $HOME/.dotSetup/NeoVim/plug-config/vimspector.vim
         nnoremap k gk
         nnoremap j gj
     " faster scrolling
-        " nnoremap <C-J> <C-d>
-        " nnoremap <C-K> <C-u>
+        " set scroll=5
+        nnoremap <C-U>  5<C-U>
+        nnoremap <C-D>  5<C-D>
+        inoremap <C-U>  <Esc>5<C-U>i
+        inoremap <C-D>  <Esc>5<C-D>i
+        " function SmoothScroll(up)
+        "     if a:up
+        "         let scrollaction="\<C-Y>"
+        "     else
+        "         let scrollaction="\<C-E>"
+        "     endif
+        "     exec "normal " . scrollaction
+        "     redraw
+        "     let counter=1
+        "     while counter<&scroll
+        "         let counter+=1
+        "         sleep 1m
+        "         redraw
+        "         exec "normal " . scrollaction
+        "     endwhile
+        " endfunction
+
+        " nnoremap <C-U> :call SmoothScroll(1)<Enter>
+        " nnoremap <C-D> :call SmoothScroll(0)<Enter>
+        " inoremap <C-U> <Esc>:call SmoothScroll(1)<Enter>i
+        " inoremap <C-D> <Esc>:call SmoothScroll(0)<Enter>i
+
     " ':w', ':wq' and ':q!' -> now also available in insert mode
         inoremap :w<CR> <Esc>:w<CR>
         inoremap :wq<CR> <Esc>:wq<CR>
@@ -223,7 +255,7 @@ source $HOME/.dotSetup/NeoVim/plug-config/vimspector.vim
     " highlight the cursor line and column
     set cursorline cursorcolumn
     " highlight yanks for half a second
-    let g:highlightedyank_highlight_duration=500
+    let g:highlightedyank_highlight_duration=900
     " display tabs and trailing spaces visually
     set list listchars=tab:>-,trail:-
     " set maximum number of characters in a single line
@@ -262,7 +294,8 @@ source $HOME/.dotSetup/NeoVim/plug-config/vimspector.vim
 " =============
 " OTHER STUFF =
 " =============
-
+    " calculator
+    inoremap <silent> <C-C> <C-R>=string(eval(input("Calculate: ")))<CR>
 
 
 " ==================
@@ -299,3 +332,4 @@ source $HOME/.dotSetup/NeoVim/plug-config/vimspector.vim
     nnoremap <Right> :echoe "Use l"<CR>
     nnoremap <Up> :echoe "Use k"<CR>
     nnoremap <Down> :echoe "Use j"<CR>
+

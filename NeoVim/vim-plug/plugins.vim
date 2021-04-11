@@ -15,6 +15,8 @@ endif
 
 " install plugins:
 call plug#begin('~/.config/nvim/autoload/plugged')
+    " add a fancy startscreen for your favourite text editor
+    Plug 'mhinz/vim-startify'
 
     " Navigation
     Plug 'justinmk/vim-sneak'
@@ -23,8 +25,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'fabi1cazenave/suckless.vim'
     " terminal management
     Plug 'fabi1cazenave/termopen.vim'
-    " Tab completion
-    " Plug 'ervandew/supertab'
+
+    " Intellisense
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'hrsh7th/nvim-compe'
 
     " Graphical undo tree
     Plug 'sjl/gundo.vim'
@@ -38,8 +42,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-commentary'
     " Incrementing dates... and more!
     Plug 'tpope/vim-speeddating'
-    " Enhance the experience of making sessions
-    Plug 'tpope/vim-obsession'
     " Focus attention
     Plug 'junegunn/goyo.vim'
     " Aspect
@@ -50,6 +52,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Visualize colors
     Plug 'chrisbra/Colorizer'
     
+    " syntax highlighting
+     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
     " Fuzzy-search
     " Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
     " Plug 'junegunn/fzf.vim'
@@ -65,10 +70,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-surround'
     " debugging code... this makes NeoVim really look like an IDE...
     Plug 'puremourning/vimspector' 
-    " enable multiple cursors
-    " Plug 'mg979/vim-visual-multi'
-    " easy search
-    " Plug 'eugen0329/vim-esearch'
 
 
     " """""""""""""""""""
@@ -83,14 +84,14 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Python-related plugins
     " """"""""""""""""""""""
     " Autocompletion for python
-    Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+    " Plug 'neoclide/coc.nvim', { 'branch': 'release' }
     " Plug 'davidhalter/jedi-vim'
     " Syntax highlighting for Python
-    Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+    " Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
     " 'PEP8' python
-    Plug 'Vimjas/vim-python-pep8-indent'
+    " Plug 'Vimjas/vim-python-pep8-indent'
     " Folding python script
-    Plug 'tmhedberg/SimpylFold'
+    " Plug 'tmhedberg/SimpylFold'
     " Close '(' '{' '[' ... automagically after opening them (and more)
     Plug 'jiangmiao/auto-pairs'
     " add code snippets

@@ -21,3 +21,4 @@ let g:suckless_mappings = {
 \      '<C-M-[&é"456789]>': 'CopyWindowToTab([123456789])',
 \}
 
+
