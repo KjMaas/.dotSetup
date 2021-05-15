@@ -20,8 +20,8 @@ set $inactive-bg-color   #2f343f
 set $active-bg-color     #2090FF
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
-
+set $urgent-bg-color     #999999
+ 
 # gaps
 gaps inner 5
 gaps outer 5
@@ -244,7 +244,7 @@ mode $wsmenu {
     bindsym y       exec --no-startup-id ~/.dotSetup/i3/workspaces/WS_6.sh
     bindsym u       exec --no-startup-id ~/.dotSetup/i3/workspaces/WS_7.sh
     bindsym i       exec --no-startup-id ~/.dotSetup/i3/workspaces/WS_8.sh
-    bindsym o       exec --no-startup-id ~/.dotSetup/i3/workspaces/WS_9.sh
+    bindsym o       exec ~/.dotSetup/i3/workspaces/WS_9.sh
     bindsym p       exec --no-startup-id ~/.dotSetup/i3/workspaces/WS_10.sh
 
     bindsym Tab     mode "default"
@@ -315,6 +315,17 @@ bindsym $mod+shift+x exec /home/kjm/.dotSetup/i3/lock_i3.sh
 
 # thunar
 bindsym $mod+shift+f exec thunar
+
+# brave profiles
+set $brave "[i]ncognito  [p]ersonal  [f]loki  [c]ampus"
+bindsym $mod+shift+w mode $brave
+mode $brave {
+    bindsym i       mode "default"; exec brave --incognito
+    bindsym p       mode "default"; exec brave --profile-directory=Profile\ 3
+    bindsym f       mode "default"; exec brave --profile-directory=Profile\ 1
+    bindsym c       mode "default"; exec brave --profile-directory=Profile\ 5
+    bindsym Escape  mode "default"
+}
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # startup
