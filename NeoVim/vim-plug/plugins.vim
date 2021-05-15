@@ -52,8 +52,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Visualize colors
     Plug 'chrisbra/Colorizer'
     
+    " highlight yanked region
+    Plug 'machakann/vim-highlightedyank'
     " syntax highlighting
-     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
     " Fuzzy-search
     " Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }

@@ -44,6 +44,8 @@ source $HOME/.dotSetup/NeoVim/plug-config/lspconfig.vim
 luafile $HOME/.dotSetup/NeoVim/plug-config/compe.lua
 luafile $HOME/.dotSetup/NeoVim/lua/lsp/python-ls.lua
 
+
+
 " =========
 " FOLDING =
 " =========
@@ -167,51 +169,13 @@ luafile $HOME/.dotSetup/NeoVim/lua/lsp/python-ls.lua
         inoremap :q!<CR> <Esc>:q!<CR>
 
 
-" ==================
-" SPLIT MANAGEMENT =
-" ==================
-    " change default window spiting
-        " set splitright splitbelow
-    " create a new Vsplit/Hsplit with a terminal now made easy
-        " nnoremap <Leader>v :vs <bar> :term<CR>i
-        " nnoremap <Leader>s :sp <bar> :term<CR>i
-    " enhance window-switching experience
-        " nnoremap <A-h> <C-w>h
-        " nnoremap <A-j> <C-w>j
-        " nnoremap <A-k> <C-w>k
-        " nnoremap <A-l> <C-w>l
-        " inoremap <A-h> <Esc><C-w>h
-        " inoremap <A-j> <Esc><C-w>j
-        " inoremap <A-k> <Esc><C-w>k
-        " inoremap <A-l> <Esc><C-w>l
-        " tnoremap <A-h> <C-\><C-n><C-w>h
-        " tnoremap <A-j> <C-\><C-n><C-w>j
-        " tnoremap <A-k> <C-\><C-n><C-w>k
-        " tnoremap <A-l> <C-\><C-n><C-w>l
-    " adjust split sizes
-        " noremap <silent> <C-Left> :vertical resize -3<CR>
-        " noremap <silent> <C-Right> :vertical resize +3<CR>
-        " noremap <silent> <C-Up> :resize +3<CR>
-        " noremap <silent> <C-Down> :resize -3<CR>
-    " invert vert to horiz or horiz to vert splits
-        " map <leader>l <C-w>t<C-w>H
-        " map <leader>j <C-w>t<C-w>K
-
-
-" ================
-" TAB MANAGEMENT =
-" ================
-    " create a new tab with a terminal now made easy
-    " nnoremap <Leader>t :tabnew <bar> :term<CR>i
-
-
 " =========================
 " COMMAND LINE PROPERTIES =
 " =========================
     " Show commands being typed
     set showcmd
     " Two lines for the command line
-    set cmdheight=3
+    set cmdheight=2
 
 
 " =================
@@ -289,6 +253,9 @@ luafile $HOME/.dotSetup/NeoVim/lua/lsp/python-ls.lua
     " augmented substitude (with sweet '.' capabilities)
     nnoremap <silent> s* :let @/='\<'.expand('<cword>').'\>'<CR>cgn
     xnoremap <silent> s* "sy:let @/=@s<CR>cgn
+    " yank til end of line
+    nnoremap Y y$
+
 
 
 " =============

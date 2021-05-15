@@ -145,7 +145,7 @@ bindsym $mod+shift+a focus child
 title_align center
 
 # remember where you come from
-workspace_auto_back_and_forth yes
+workspace_auto_back_and_forth no
 # switch between the current and the previously focused one
 bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth
@@ -157,16 +157,16 @@ bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:  Brave"
-set $ws2 "2: floki"
-set $ws3 "3:  "
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
 set $ws4 "4"
-set $ws5 "5: "
-set $ws6 "6: tmp"
-set $ws7 "7: "
-set $ws8 "8: Campus"
-set $ws9 "9: Blender"
-set $ws10 "10: Config"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 
 # assign worspaces to monitors (run xrandr --listmonitors or --current)
 workspace 2 output primary
@@ -200,9 +200,10 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
         bindsym h resize shrink width 10 px or 10 ppt
@@ -216,18 +217,6 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
-
-# create "launch mode"
-set $mode_launcher Launch: [f]irefox
-bindsym $mod+o mode "$mode_launcher"
-
-mode "$mode_launcher" {
-    bindsym f exec firefox
-
-    bindsym Escape mode "default"
-    bindsym Return mode "default"
-}
 
 set $sysmenu "System: [l]ock  [r]eload  l[o]gout  [s]uspend  [p]oweroff  re[b]oot"
 bindsym $mod+Escape mode $sysmenu
@@ -244,6 +233,24 @@ mode $sysmenu {
 }
 
 
+set $wsmenu "WS[1]: tmp  WS[2]: work  WS[3]: terminal  WS[4]: NotAssigned  WS[5]: NotAssigned  WS[6]: 666  WS[7]: NotAssigned  WS[8]: Campus  WS[9]: Blender  WS[10]: config"
+bindsym $mod+Tab mode $wsmenu
+mode $wsmenu {
+    bindsym a       exec --no-startup-id ~/.dotSetup/i3/workspaces/WS_1.sh
+    bindsym z       exec --no-startup-id ~/.dotSetup/i3/workspaces/WS_2.sh
+    bindsym e       exec --no-startup-id ~/.dotSetup/i3/workspaces/WS_3.sh
+    bindsym r       exec --no-startup-id ~/.dotSetup/i3/workspaces/WS_4.sh
+    bindsym t       exec --no-startup-id ~/.dotSetup/i3/workspaces/WS_5.sh
+    bindsym y       exec --no-startup-id ~/.dotSetup/i3/workspaces/WS_6.sh
+    bindsym u       exec --no-startup-id ~/.dotSetup/i3/workspaces/WS_7.sh
+    bindsym i       exec --no-startup-id ~/.dotSetup/i3/workspaces/WS_8.sh
+    bindsym o       exec --no-startup-id ~/.dotSetup/i3/workspaces/WS_9.sh
+    bindsym p       exec --no-startup-id ~/.dotSetup/i3/workspaces/WS_10.sh
+
+    bindsym Tab     mode "default"
+    bindsym Return  mode "default"
+    bindsym Escape  mode "default"
+}
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # window colors
@@ -284,6 +291,7 @@ bar {
 
 }
 
+# status bar #2 (bottom)
 bar {
     position bottom
     workspace_buttons no
@@ -306,51 +314,19 @@ bindsym --release Caps_Lock exec pkill -SIGRTMIN+10 i3blocks
 bindsym $mod+shift+x exec /home/kjm/.dotSetup/i3/lock_i3.sh
 
 # thunar
-bindsym $mod+shift+f workspace $ws0; exec thunar
-
-# alacritty
-# bindsym $mod+F2 workspace $ws2; exec --no-startup-id alacritty
+bindsym $mod+shift+f exec thunar
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # startup
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-# open teams on startup
-exec --no-startup-id teams
-assign [class="Microsoft Teams - Preview"] $ws2
-
-# open Brave on startup
-# exec_always brave --user-data-dir='/home/kjm/.config/BraveSoftware/Brave-Browser/Profile'
-# exec_always  brave -n --args --incognito
-# assign [class="Brave-browser"] $ws1
-exec --no-startup-id i3-msg 'workspace $ws1; exec brave --incognito; workspace $ws9; title_format "Important | %title"'
-
-# open Notion on startup
-exec --no-startup-id notion-app
-assign [class="Notion"] $ws2
-
-# open Clockify on startup
-exec clockify
-assign [class="Clockify"] $ws2
-for_window [class="Clockify"] floating enable
-
-# exec --no-startup-id i3-msg 'workspace 6; exec thunar; workspace 7'
-bindsym $mod+p title_format "Important | %title"
-
-# open teams on startup
-exec --no-startup-id blender
-assign [class="Blender"] $ws9
-
-# open custom Alacritty terminal on startup
-exec --no-startup-id alacritty -t 'i3config' -e nvim ~/.i3/config
-assign [title="i3config"] $ws10
-
 # launch flameshot
 exec --no-startup-id flameshot
 
+bindsym $mod+p title_format "Important | %title"
+
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# other stuff 
+#other stuff 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # custom walpaper
 exec_always --no-startup-id feh --randomize --bg-scale ~/Documents/Blender/bgnd/renders/*
@@ -365,12 +341,13 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id xcompmgr -c -l0 -t0 -r0 -o.00
 
 # launch screen sweetness (smooth transitions,...)
-exec picom 
+exec --no-startup-id picom 
 
 # location provider (used for redshift)
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
-# Should you change your keyboard layout some time, delete
-# this file and re-run i3-config-wizard(1).
 
 
-
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# memo
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# exec --no-startup-id i3-msg 'workspace $ws1; exec brave --incognito; workspace $ws9; title_format "Important | %title"'
