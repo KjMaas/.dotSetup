@@ -139,8 +139,6 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+shift+a focus child
 
-# workspace_layout default|stacking|tabbed
-
 # window-title alignment
 title_align center
 
@@ -155,6 +153,12 @@ bindsym $mod+m exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
 # read 1 character and go to the window with the character
 bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# managing workspaces
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# workspace_layout default|stacking|tabbed
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -167,9 +171,6 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
-
-# assign worspaces to monitors (run xrandr --listmonitors or --current)
-workspace 2 output primary
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -333,7 +334,7 @@ mode $brave {
 # launch flameshot
 exec --no-startup-id flameshot
 
-bindsym $mod+p title_format "Important | %title"
+# bindsym $mod+p title_format "Important | %title"
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -357,6 +358,27 @@ exec --no-startup-id picom
 # location provider (used for redshift)
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# managing additional monitors
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# assign worspaces to monitors (run xrandr --listmonitors or --current)
+# workspace 3 output primary
+# workspace 5 output HDMI1
+
+# Moving workspaces between screens 
+bindsym $mod+p move workspace to output right
+bindsym $mod+shift+p move workspace to output left
+
+# monitor mode
+set $monitor "[c]opy  [r]ight  [l]eft"
+bindsym $mod+shift+m mode $monitor
+mode $monitor {
+    bindsym c       mode "default"; exec --no-startup-id xrandr --output HDMI1 --auto --same-as eDP1
+    bindsym r       mode "default"; exec --no-startup-id xrandr --output HDMI1 --auto --right-of eDP1
+    bindsym l       mode "default"; exec --no-startup-id xrandr --output HDMI1 --auto --left-of eDP1
+    bindsym Escape  mode "default"
+}
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # memo

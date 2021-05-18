@@ -75,7 +75,7 @@
                                        {
                                        "class": "^Notion$",
                                        "instance": "^notion$",
-                                       "title": "^floki\\ \\-\\ Home$",
+                                       // "title": "^floki\\ \\-\\ Home$",
                                        "window_role": "^browser\\-window$"
                                        }
                                     ],
